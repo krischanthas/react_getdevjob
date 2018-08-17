@@ -1,14 +1,16 @@
 import React from 'react';
-import '../assets/css/app.css';
-import logo from '../assets/images/logo.svg';
+import LandingPage from './landing_page';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import SearchResults from './search_results';
 
 const App = () => (
-    <div>
-        <div className="app">
-            <img src={logo} className="logo rotate"/>
-            <h1>Welcome to React</h1>
-        </div>
-    </div>
+    <Router>
+    	<div>
+	    	<Route exact path = '/' component ={LandingPage}/>
+			<Route path ='/searchresults' component = {SearchResults}/>
+		</div>	
+    </Router>	
+    
 );
 
 export default App;
