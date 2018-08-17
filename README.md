@@ -20,4 +20,4 @@
 > 1. Run webpack to bundle files
 >    - `npm run bundle`
 > 
-> **NOTE:** *After bundling you can not directly run your app locally. You must run your app from the root directory of a server.*
+> **NOTE:** *After bundling and placing on a web server. The `public` folder should be the web root*
