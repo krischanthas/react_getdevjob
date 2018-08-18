@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './search_results.css';
 import NavBar from './nav_bar';
+import Card from './single_card';
 
 class SearchResults extends Component {
 	render() {
@@ -9,12 +10,17 @@ class SearchResults extends Component {
 				<NavBar/>
 				<div className = 'cardArea'>
                    	<div className='leftColumn'>
-	                    <div className='card card-panel search-result'></div>
-	                    <div className='card card-panel search-result'></div>
+	                    {/* <div className='card card-panel search-result'> */}
+						<Card />
+						<Card />
+						{/* </div> */}
+	                    {/* <div className='card card-panel search-result'></div> */}
 	                </div>    
                 	<div className='rightColumn'>
-                    	<div className='card card-panel search-result'></div>
-                    	<div className='card card-panel search-result'></div>
+					<Card />
+					<Card />
+                    	{/* <div className='card card-panel search-result'></div> */}
+                    	{/* <div className='card card-panel search-result'></div> */}
                 	</div>
                 </div>	
 			</div>

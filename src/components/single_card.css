@@ -1,0 +1,46 @@
+.cardContainer {
+    height:35%;
+    border: 2px solid black;
+}
+
+.sc-leftColumn{
+    width:60%;
+    height:100%;
+    display: inline-block;
+}
+
+.sc-rightColumn{
+    width:35%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+ul {
+    list-style-type: none;
+    margin:0;
+    margin-top: 2%;
+    position: relative;
+}
+
+
+ul, p, .datePosted{
+    font-size: 2vmin;
+}
+.datePosted{
+    color:green;
+}
+
+.buttonArea button,.appliedStatus{
+    display: block;
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+    width: 60%;
+   
+}
+
+.buttonArea button{
+    margin-top: 25%;        
+    width: 60%;
+}
