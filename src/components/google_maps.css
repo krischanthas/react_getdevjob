@@ -1,6 +1,6 @@
 #map {
-    width: 400px; 
-    height: 200px;
+    width: 56vmin; 
+    height: 35vmin;
     z-index: 2;
   }
   /* Optional: Makes the sample page fill the window. */

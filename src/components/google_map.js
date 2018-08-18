@@ -6,7 +6,7 @@ class GoogleMap extends Component {
         return (
             <div className ="googleContainer">
                 <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
-                <div id = "map">Map goes HEre</div>
+                <div id = "map"></div>
             </div>
 
 
