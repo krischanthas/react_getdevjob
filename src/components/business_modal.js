@@ -1,56 +1,58 @@
 import React,{Component} from 'react';
+import GoogleMap from './google_map';
+import './business_modal.css';
 
 class BusinessModal extends Component {
     render(){
         return (
-            <div>
-            <div class='container'>
-                <div class="row">
-                <div class='leftColumn col s6'>
-                    <div class="row">
-                        <button class='btn col offset-s2 s2 green lighten-1 waves-light'>Save</button>
-                        <button class='btn col offset-s1 s2 green lighten-1'>Apply!</button>
-                        <button class='btn col offset-s1 s2'>Share</button>
+            <div className="container modalBody">
+            <div className='modalPosition card-panel'>
+                <div className="row">
+                <div className='leftColumn col s6'>
+                    <div className="row">
+                        <button className='btn col offset-s2 s2 green lighten-1 waves-light'>Save</button>
+                        <button className='btn col offset-s1 s2 green lighten-1'>Apply!</button>
+                        <button className='btn col offset-s1 s2'>Share</button>
                     </div>
-                    <div class='bm-companyName center'>
+                    <div className='bm-companyName center'>
                         Company Name
                     </div>
-                    <div class='bm-jobTitle center'>
+                    <div className='bm-jobTitle center'>
                         Job Title
                     </div>
-                    <ul class='pagination col offset-s2 s10'>
-                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                            <li class="waves-effect"><a href="#!">Salary</a></li>
-                            <li class="waves-effect"><a href="#!">Details</a></li>
-                            <li class="active indigo lighten-2"><a href="#!">Learn More</a></li>
-                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                    <ul className='pagination col offset-s2 s10'>
+                            <li className="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li className="waves-effect"><a href="#!">Salary</a></li>
+                            <li className="waves-effect"><a href="#!">Details</a></li>
+                            <li className="active indigo lighten-2"><a href="#!">Learn More</a></li>
+                            <li className="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
                     </ul>
-                    <div class='row'>
-                        <p class='center'>Find out more details about the company</p>
-                        <button class='btn col offset-s4 s4 blue'>Research Business</button>
+                    <div className='row'>
+                        <p className='center'>Find out more details about the company</p>
+                        <button className='btn col offset-s4 s4 blue'>Research Business</button>
                     </div>
-                    <div class='row'>
-                        <p class='center'>Do you know anyone working here?</p>
-                        <button class='btn col offset-s4 s4 blue'>LinkedIn</button>
+                    <div className='row'>
+                        <p className='center'>Do you know anyone working here?</p>
+                        <button className='btn col offset-s4 s4 blue'>LinkedIn</button>
                     </div>
                 </div>
-                <div class='rightColumn col s6'>
-                    <div class='row'>
-                        <button class='btn red right'>X</button>
+                <div className='rightColumn col s6'>
+                    <div className='row'>
+                        <button className='btn red right'>X</button>
                     </div>
-                    <div class='row'>   
-                        <div class ="bm-map col s12">
-                            Google Map
+                    <div className='row'>   
+                        <div className ="bm-map col s12">
+                           <GoogleMap />
                         </div>
-                            <ul class="row">
-                                <li class='col s3'>Drive Time</li>
-                                <li class='col offset-s1 s3'>No Traffic</li>
-                                <li class='col offset-s1 s3'>15 mins</li>
-                                <li class='col offset-s4 s3'>With Traffic</li>
-                                <li class='col offset-s1 s3'>45 mins</li>
+                            <ul className="row">
+                                <li className='col s3'>Drive Time</li>
+                                <li className='col offset-s1 s3'>No Traffic</li>
+                                <li className='col offset-s1 s3'>15 mins</li>
+                                <li className='col offset-s4 s3'>With Traffic</li>
+                                <li className='col offset-s1 s3'>45 mins</li>
                             </ul>
                         
-                        <div class='jobDetails'>
+                        <div className='jobDetails'>
                             <label>Job Description</label>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Molestias alias reprehenderit magni illo fugiat. Architecto recusandae 

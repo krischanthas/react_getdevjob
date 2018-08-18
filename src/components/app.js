@@ -6,7 +6,7 @@ import BusinessModal from './business_modal';
 
 const App = () => (
     <Router>
-    	<div>
+    	<div className="test" style={{'position':'relative'}}>
 	    	<Route exact path = '/' component ={LandingPage}/>
 			<Route path ='/searchresults' component = {SearchResults}/>
 			<Route path ='/searchresults/modal' component = {BusinessModal}/>

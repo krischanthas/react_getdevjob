@@ -13,3 +13,14 @@
 .bm-jobTitle{
     margin-bottom: 15%;
 }
+
+/* .modalPosition {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+.modalBody{
+    position: absolute !important;
+    top:0;
+}
