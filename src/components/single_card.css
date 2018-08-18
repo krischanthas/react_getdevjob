@@ -1,5 +1,5 @@
-.cardContainer {
-    height:35%;
+.sc-cardContainer {
+    height:30%;
     border: 2px solid black;
 }
 
@@ -16,7 +16,7 @@
     vertical-align: top;
 }
 
-ul {
+.sc-jobDetailsList {
     list-style-type: none;
     margin:0;
     margin-top: 2%;
@@ -24,7 +24,7 @@ ul {
 }
 
 
-ul, p, .datePosted{
+.sc-jobDetailsList, .datePosted{
     font-size: 2vmin;
 }
 .datePosted{
@@ -43,4 +43,9 @@ ul, p, .datePosted{
 .buttonArea button{
     margin-top: 25%;        
     width: 60%;
+}
+
+.sc-jobDescription p {
+    height: 50%;
+    width: 100%;
 }

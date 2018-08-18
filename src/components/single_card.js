@@ -7,17 +7,17 @@ class Card extends Component{
     render(){
         return (
             <div>
-        <div className='cardContainer card-panel'>
+        <div className='sc-cardContainer card-panel'>
             <div className = 'sc-leftColumn'>
                 <div className ='BusinessInfo'>
-                    <ul>
+                    <ul className='sc-jobDetailsList'>
                         <li>Front End Web Developer</li>
                         <li>Solugenix Corp</li>
                         <li>Irvine, CA 92618</li>
                         <li>60-80K Salary</li>
                     </ul>
                 </div>
-                <div className='jobDescription'>
+                <div className='sc-jobDescription'>
                     <p>Front End Web Developer. Create REST based web 
                         services and APIs for consumption by mobile and 
                         web platforms. We are looking for Front End Web Developer 
