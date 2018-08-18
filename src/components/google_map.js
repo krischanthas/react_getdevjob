@@ -4,9 +4,9 @@ import './google_maps.css';
 class GoogleMap extends Component {
     render(){
         return (
-            <div>
+            <div className ="googleContainer">
                 <input id="pac-input" className="controls" type="text" placeholder="Search Box"/>
-                <div id="map"></div>
+                <div id = "map">Map goes HEre</div>
             </div>
 
 

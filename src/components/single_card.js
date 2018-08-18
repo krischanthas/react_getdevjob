@@ -5,7 +5,7 @@ import './single_card.css';
 class Card extends Component{
     render(){
         return (
-            <div>
+            <div >
         <div className='sc-cardContainer card-panel'>
             <div className = 'sc-leftColumn'>
                 <div className ='BusinessInfo'>
