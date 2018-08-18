@@ -36,7 +36,7 @@ class Card extends Component{
                 </div>
                 <div className='buttonArea'> 
                     <button className='btn indigo'>Save</button>
-                    <Link to='/busModal'><button  className='btn'>More Info</button></Link>
+                    <Link to='searchresults/modal'><button  className='btn'>More Info</button></Link>
                     <button className ='btn'>Share</button>
                 </div>
             </div>
