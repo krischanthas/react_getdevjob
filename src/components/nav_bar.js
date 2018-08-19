@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Filters from './filters';
 
 class NavBar extends Component {
 	render() {
