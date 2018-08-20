@@ -34,3 +34,7 @@
     height: 30vmin;
 
 }
+
+.bm-tabs li{
+  z-index: 2;
+}

@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import GoogleMap from './google_map';
 import './business_modal.css';
+import TabsInfo from './bm_tabs';
 
 class BusinessModal extends Component {
     render(){
@@ -20,14 +21,20 @@ class BusinessModal extends Component {
                     <div className='bm-jobTitle center'>
                         Job Title
                     </div>
-                    <ul className='pagination col offset-s2 s10'>
-                            <li className="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                            <li className="waves-effect"><a href="#!">Salary</a></li>
-                            <li className="waves-effect"><a href="#!">Details</a></li>
-                            <li className="active indigo lighten-2"><a href="#!">Learn More</a></li>
-                            <li className="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-                    </ul>
-                    <div className='row'>
+                    <TabsInfo />
+                    {/* <div className = 'row'>
+                        <div className='col s12'>
+                            <ul className='tabs bm-tabs'>
+                                <li className="tab col s3 offset-s1"><a href="#test1">Salary</a></li>
+                                <li className="tab col s3"><a href="#test2">Details</a></li>
+                                <li className="tab col s4 active"><a href="#test3">Learn More</a></li>
+                            </ul>
+                        </div>
+                    <div className='row' id='test1'>
+                        <p className=''>Average Salary</p>
+                        <div className='text-center'>$69,717</div>
+                    </div>
+                    <div className='row' id='test3'>
                         <p className='center'>Find out more details about the company</p>
                         <button className='btn col offset-s4 s4 blue'>Research Business</button>
                     </div>
@@ -35,7 +42,7 @@ class BusinessModal extends Component {
                         <p className='center'>Do you know anyone working here?</p>
                         <button className='btn col offset-s4 s4 blue'>LinkedIn</button>
                     </div>
-                </div>
+                </div> */}
                 <div className='rightColumn col s6'>
                     <div className='row'>
                         <button className='btn red right'>X</button>
@@ -71,6 +78,7 @@ class BusinessModal extends Component {
                 </div>
             </div>
     
+        </div>
         </div>
         )
     }
