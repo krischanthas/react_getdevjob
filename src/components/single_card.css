@@ -31,7 +31,7 @@
     color:green;
 }
 
-.buttonArea button,.appliedStatus{
+.buttonArea .btn-style,.appliedStatus{
     display: block;
     position:relative;
     left:50%;
@@ -40,7 +40,7 @@
    
 }
 
-.buttonArea button{
+.buttonArea .btn-style{
     margin-top: 25%;        
     width: 60%;
 }

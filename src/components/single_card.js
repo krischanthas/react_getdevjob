@@ -4,8 +4,8 @@ import './single_card.css';
 
 class Card extends Component{
     render(){
-        console.log('single card', this.props.location.pathname)
-        let linkQuery = this.props.location.pathname + '/m'
+        let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
+        console.log('link', linkQuery)
         return (
             <div >
         <div className='sc-cardContainer card-panel'>
@@ -38,9 +38,9 @@ class Card extends Component{
                     <span>Applied</span>
                 </div>
                 <div className='buttonArea'> 
-                    <button className='btn indigo'>Save</button>
-                    <Link to={linkQuery}><button  className='btn'>More Info</button></Link>
-                    <button className ='btn'>Share</button>
+                    <button className='btn btn-style indigo'>Save</button>
+                    <Link className='btn btn-style' to={linkQuery}>More Info</Link>
+                    <button className ='btn btn-style'>Share</button>
                 </div>
             </div>
         </div>
