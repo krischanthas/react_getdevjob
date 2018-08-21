@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import GoogleMap from './google_map';
 import './business_modal.css';
+import TabsInfo from './bm_tabs';
 
 class BusinessModal extends Component {
     render(){
@@ -20,21 +21,8 @@ class BusinessModal extends Component {
                     <div className='bm-jobTitle center'>
                         Job Title
                     </div>
-                    <ul className='pagination col offset-s2 s10'>
-                            <li className="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                            <li className="waves-effect"><a href="#!">Salary</a></li>
-                            <li className="waves-effect"><a href="#!">Details</a></li>
-                            <li className="active indigo lighten-2"><a href="#!">Learn More</a></li>
-                            <li className="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-                    </ul>
-                    <div className='row'>
-                        <p className='center'>Find out more details about the company</p>
-                        <button className='btn col offset-s4 s4 blue'>Research Business</button>
-                    </div>
-                    <div className='row'>
-                        <p className='center'>Do you know anyone working here?</p>
-                        <button className='btn col offset-s4 s4 blue'>LinkedIn</button>
-                    </div>
+                    <TabsInfo />
+              
                 </div>
                 <div className='rightColumn col s6'>
                     <div className='row'>
@@ -68,9 +56,10 @@ class BusinessModal extends Component {
                         </div>
                     </div>
                 </div>
-                </div>
+                
             </div>
     
+        </div>
         </div>
         )
     }
