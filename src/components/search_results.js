@@ -89,8 +89,6 @@ class SearchResults extends Component {
 	}
 
 	render() {
-		
-		console.log(this.state);
 		console.log('Props:', this.props);
 		return (
 			<div className = 'main-cont'>
@@ -104,7 +102,6 @@ class SearchResults extends Component {
                 	</div>
                 </div>	
 			</div>
-
 		);
 	}
 }

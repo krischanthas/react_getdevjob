@@ -95,13 +95,12 @@ class LandingPage extends Component {
 			                    </div>
 			                </div>
 			                <div className='row'>
-			                	<Link className = "btn orange darken-4 col s2 offset-s5 waves-effect waves-light"to ={linkQuery}>		                		
+			                	<Link className = "btn orange darken-4 col s2 offset-s5 waves-effect waves-light"to ={linkQuery}>Go	                		
 			                    </Link>	
 			                </div>
 			            </form>
 			        </div>    
-				</div>
-			
+				</div>	
 		);
 	}
 }
