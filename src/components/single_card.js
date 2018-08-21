@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import './single_card.css';
 
 class Card extends Component{
+
     render(){
-        console.log('single card', this.props.location.pathname)
+        console.log('single card Data Passed', this.props.details.job);
+        console.log('PROPSSSSSS', this.props.details);
+        const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.location.pathname + '/m'
         return (
             <div >
@@ -12,24 +15,19 @@ class Card extends Component{
             <div className = 'sc-leftColumn'>
                 <div className ='BusinessInfo'>
                     <ul className='sc-jobDetailsList'>
-                        <li>Front End Web Developer</li>
-                        <li>Solugenix Corp</li>
+                        <li>{title}</li>
+                        <li>{company_name}</li>
                         <li>Irvine, CA 92618</li>
                         <li>60-80K Salary</li>
                     </ul>
                 </div>
                 <div className='sc-jobDescription'>
-                        <p>Front End Web Developer. Create REST based web 
-                        services and APIs for consumption by mobile and 
-                        web platforms. We are looking for Front End Web Developer 
-                        for our a team builder for others, but most importantly we’ve 
-                        been there. We know there is no substitute for experience,
-                        so let...</p>
+                        <p>{description}</p>
                         
                 </div>
                 <div className='datePosted'>
                 
-                    Date Posted: 8/10/18
+                    Date Posted: {post_date};
                 </div>
             </div>
             <div className="sc-rightColumn">

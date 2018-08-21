@@ -27,7 +27,7 @@ class SearchResults extends Component {
 				"job": [{
 					"id": "255",
 					"title": "Web Developer",
-					"company_name": "Blizzard Super Long Corporate",
+					"company_name": "Blizzard Super Long",
 					"company_id": "1",
 					"post_date": "2018-08-08 00:00:00",
 					"listing_url": "https:\/\/us.jooble.org\/desc\/3786682248323373670?ckey=software&rgn=6974&pos=1&elckey=-8730678432586643581&age=304&relb=100&brelb=100&bscr=485,23587&scr=485,23587",
@@ -72,11 +72,11 @@ class SearchResults extends Component {
 		let rightArray =[];
 		for (var index=0; index < array.length; index++){
 			if(alt){
-				let temp = <Card key = {index} details = {this.state.response[index]}{...this.props} />
+				let temp = <Card key = {index} pullId = {index} details = {this.state.response[index]}{...this.props} />
 				leftArray.push(temp);
 				alt = 1-alt;
 			} else {
-				let temp = <Card key = {index} details = {this.state.response[index]}{...this.props} />
+				let temp = <Card key = {index} pullID = {index} details = {this.state.response[index]}{...this.props} />
 				rightArray.push(temp);
 				alt = 1-alt;
 			}
