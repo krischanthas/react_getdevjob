@@ -22,27 +22,8 @@ class BusinessModal extends Component {
                         Job Title
                     </div>
                     <TabsInfo />
-                    {/* <div className = 'row'>
-                        <div className='col s12'>
-                            <ul className='tabs bm-tabs'>
-                                <li className="tab col s3 offset-s1"><a href="#test1">Salary</a></li>
-                                <li className="tab col s3"><a href="#test2">Details</a></li>
-                                <li className="tab col s4 active"><a href="#test3">Learn More</a></li>
-                            </ul>
-                        </div>
-                    <div className='row' id='test1'>
-                        <p className=''>Average Salary</p>
-                        <div className='text-center'>$69,717</div>
-                    </div>
-                    <div className='row' id='test3'>
-                        <p className='center'>Find out more details about the company</p>
-                        <button className='btn col offset-s4 s4 blue'>Research Business</button>
-                    </div>
-                    <div className='row'>
-                        <p className='center'>Do you know anyone working here?</p>
-                        <button className='btn col offset-s4 s4 blue'>LinkedIn</button>
-                    </div>
-                </div> */}
+              
+                </div>
                 <div className='rightColumn col s6'>
                     <div className='row'>
                         <button className='btn red right'>X</button>
@@ -75,7 +56,7 @@ class BusinessModal extends Component {
                         </div>
                     </div>
                 </div>
-                </div>
+                
             </div>
     
         </div>

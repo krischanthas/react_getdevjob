@@ -11,18 +11,7 @@ constructor(props){
         learnMore:''
     }
 }
-
-
-assignActiveStatus(event){
-    console.log('event    :',event);
-    this.setState({
-       [name]:'active' ,
-    })
-}
-
-
-
-   
+  
 render(){
     console.log(this.state);
     return(
