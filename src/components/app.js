@@ -8,8 +8,8 @@ const App = () => (
     <Router>
     	<div className="test" style={{'position':'relative'}}>
 	    	<Route exact path = '/' component ={LandingPage}/>
-			<Route path ='/searchresults' component = {SearchResults}/>
-			<Route path ='/searchresults/modal' component = {BusinessModal}/>
+			<Route path ='/s' component = {SearchResults}/>
+			<Route path ='/s/webdeveloper/irvine/m' component = {BusinessModal}/>
 		</div>	
     </Router>	
     

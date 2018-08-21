@@ -24,6 +24,12 @@ class LandingPage extends Component {
 		});
 	}
 	render() {
+		let {title, location} = this.state;
+		let locationLow = location.toLowerCase();
+		let titleNoSpace = title.toLowerCase().split(' ').join('');
+		let linkQuery = '/s/' + titleNoSpace + '/' + locationLow;
+		let routeQuery = '/:' + titleNoSpace + "/" + locationLow;
+		
 		return (
 			<div className ='body-container'>
 				<div className ="left-numbers">
@@ -88,12 +94,13 @@ class LandingPage extends Component {
 		                    </div>
 		                </div>
 		                <div className='row'>
-		                	<Link to ='/searchresults'>		                	
+		                	<Link to ={linkQuery}>		                	
 		                    	<button className='btn orange darken-4 col s2 offset-s5 waves-effect waves-light'>Go</button>
 		                    </Link>	
 		                </div>
 		            </form>
 		        </div>
+
 		        
 			</div>
 		);
