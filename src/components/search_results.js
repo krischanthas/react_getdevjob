@@ -3,6 +3,7 @@ import './search_results.css';
 import NavBar from './nav_bar';
 import Card from './single_card';
 
+
 class SearchResults extends Component {
 	constructor(props){
 		super(props);
@@ -25,7 +26,7 @@ class SearchResults extends Component {
 			}, {
 				"success": true,
 				"job": [{
-					"id": "255",
+					"id": "215",
 					"title": "Web Developer",
 					"company_name": "Blizzard Super Long Corporate",
 					"company_id": "1",
@@ -37,7 +38,7 @@ class SearchResults extends Component {
 			}, {
 				"success": true,
 				"job": [{
-					"id": "255",
+					"id": "253",
 					"title": "Nintendo",
 					"company_name": "CyberCoders",
 					"company_id": "1",
@@ -49,7 +50,7 @@ class SearchResults extends Component {
 			}, {
 				"success": true,
 				"job": [{
-					"id": "255",
+					"id": "211",
 					"title": "SEGA",
 					"company_name": "CyberCoders",
 					"company_id": "1",
@@ -89,7 +90,8 @@ class SearchResults extends Component {
 
 	render() {
 		
-		console.log(this.state)
+		console.log(this.state);
+		console.log('Props:', this.props);
 		return (
 			<div className = 'main-cont'>
 				<NavBar/>
