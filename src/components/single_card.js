@@ -4,6 +4,8 @@ import './single_card.css';
 
 class Card extends Component{
     render(){
+        console.log('single card', this.props.location.pathname)
+        let linkQuery = this.props.location.pathname + '/m'
         return (
             <div >
         <div className='sc-cardContainer card-panel'>
@@ -37,7 +39,7 @@ class Card extends Component{
                 </div>
                 <div className='buttonArea'> 
                     <button className='btn indigo'>Save</button>
-                    <Link to='searchresults/modal'><button  className='btn'>More Info</button></Link>
+                    <Link to={linkQuery}><button  className='btn'>More Info</button></Link>
                     <button className ='btn'>Share</button>
                 </div>
             </div>
