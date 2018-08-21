@@ -5,8 +5,6 @@ import './single_card.css';
 class Card extends Component{
 
     render(){
-        console.log('single card Data Passed', this.props.details.job);
-        console.log('PROPSSSSSS', this.props.details);
         const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.location.pathname + '/m'
         return (
@@ -22,11 +20,9 @@ class Card extends Component{
                     </ul>
                 </div>
                 <div className='sc-jobDescription'>
-                        <p>{description}</p>
-                        
+                        <p>{description}</p>       
                 </div>
                 <div className='datePosted'>
-                
                     Date Posted: {post_date};
                 </div>
             </div>
