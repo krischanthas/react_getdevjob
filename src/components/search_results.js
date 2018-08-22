@@ -64,7 +64,7 @@ class SearchResults extends Component {
 			}
 		] 
 		}
-	};
+	}
 
 	componentDidMount(){
 		this.populateCards(this.state.response);
