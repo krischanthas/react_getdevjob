@@ -1,0 +1,13 @@
+.bm-salary{
+    text-align: center;
+}
+
+.bm-details{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.tabs .indicator{
+    display:none !important;
+}
