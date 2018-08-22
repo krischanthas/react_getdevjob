@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './search_results.css';
 import NavBar from './nav_bar';
 import Card from './single_card';
+import Filters from './filters';
+import { Button, SideNav,SideNavItem } from 'react-materialize';
 
 
 class SearchResults extends Component {
@@ -93,6 +95,14 @@ class SearchResults extends Component {
 		return (
 			<div className = 'main-cont'>
 				<NavBar/>
+				<SideNav
+						  trigger = {<Button className = "sideTrigger">Filters</Button>}
+						  options={{closeOnClick:false}}
+					  >
+						<SideNavItem>
+							<Filters />
+						</SideNavItem>
+					</SideNav>
 				<div className = 'cardArea'>
                    	<div className='leftColumn'>
 	                    {this.state.left}
