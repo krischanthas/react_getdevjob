@@ -15,10 +15,9 @@ constructor(props){
 render(){
     console.log(this.state);
     return(
-        <div>
             <Tabs className="z-depth-1">
                 <Tab title="Salary" active>
-                <div className="section1">
+                    <div className="section1">
                         <div className='col s12'>
                             <p className=''>Average Salary</p>
                             <div className='text-center'>$69,717</div>
@@ -53,7 +52,6 @@ render(){
                     </div>
                 </Tab>
             </Tabs>
-        </div>
     )
 }
 }

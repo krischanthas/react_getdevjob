@@ -95,10 +95,10 @@ class SearchResults extends Component {
 		return (
 			<div className = 'main-cont'>
 				<NavBar/>
-				<SideNav
-						  trigger = {<Button className = "sideTrigger">Filters</Button>}
-						  options={{closeOnClick:false}}
-					  >
+					<SideNav
+				  	trigger = {<Button className = "sideTrigger">Filters</Button>}
+				  	options={{closeOnClick:false}}
+					>
 						<SideNavItem>
 							<Filters />
 						</SideNavItem>
