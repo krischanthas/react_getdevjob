@@ -38,3 +38,8 @@
 .bm-tabs li{
   z-index: 2;
 }
+
+.modalStyle{
+    max-height: 85%;
+    top:0;
+}
