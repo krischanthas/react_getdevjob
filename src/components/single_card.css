@@ -13,13 +13,14 @@
     width:35%;
     height: 100%;
     display: inline-block;
-    vertical-align: top;
+    position: relative;
+    vertical-align: ;
 }
 
 .sc-jobDetailsList {
     list-style-type: none;
     margin:0;
-    margin-top: 2%;
+    margin-top: -3%;
     position: relative;
 }
 
@@ -31,21 +32,33 @@
     color:green;
 }
 
-.buttonArea .btn-style,.appliedStatus{
+.buttonArea .btn-style, .appliedStatus{
     display: block;
     position:relative;
     left:50%;
-    transform: translateX(-50%);
+   /* transform: translateX(-50%);*/
     width: 60%;
-   
+    top: -6vh;
+    
+}
+.appliedStatus{
+    margin: 0 12%;
 }
 .buttonArea .btn-style{
-    margin-top: 25%;        
+    margin-top: 10%;        
     width: 60%;
 }
 
-.sc-jobDescription p {
+.sc-jobDescription{
     height: 50%;
     width: 100%;
+    margin: 7% 0 0 0;
+    
+}
+.sc-jobDescription p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;  
 }
 

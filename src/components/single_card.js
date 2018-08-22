@@ -1,8 +1,23 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './single_card.css';
+import {Input} from 'react-materialize';
 
 class Card extends Component{
+    constructor(props){
+        super(props);
+        
+        this.state = {
+        isChecked: false
+        }
+
+    }
+
+    toggleCheckboxChange(event){
+        setState({
+            isChecked: true
+        })
+    }
 
     render(){
 
@@ -31,8 +46,7 @@ class Card extends Component{
             </div>
             <div className="sc-rightColumn">
                 <div className='appliedStatus'>
-                    <input type='checkbox'/>
-                    <span>Applied</span>
+                    <Input className = 'appliedStatus' name='group1' type='checkbox' value='Applied' label='Applied' />                                   
                 </div>
                 <div className='buttonArea'> 
                     <button className='btn btn-style indigo'>Save</button>
