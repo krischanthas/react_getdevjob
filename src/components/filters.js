@@ -1,31 +1,55 @@
 import React, { Component } from 'react';
 import './filters.css';
+import {Row, Input} from 'react-materialize';
 
 
 class Filters extends Component {
     render(){
         return (
             <div>
-                <div className ="sidebar card">
-                    <label>Salary</label>
-                    <div className='row'>
+                <div className ="sidebar">
+                <Row>
+                    <Input s={12} type ='select' label = 'Salary' defaultValue ='Min Salary'>
+                        <option value = '1'> $30,000 - $50,000</option>
+                        <option value = '2'> $50,000 - $70,000</option>
+                        <option value = '3'> $70,000+</option>
+                    </Input>
+                </Row>
+                    {/* <label>Salary</label>
+                    <div className='row salary'>
                         <input className='col s5 offset-s1' type='text' placeholder='Min' />
                         <input className='col s5 offset-s1 ' type='text' placeholder='Max' />
-                    </div>
-                    <div className='row'>
-                        <label>Distance</label>
-                        <p>(in Miles)</p>
-                        <input className='col offset-s1 s10' type ='range' min='1' max='4' value='1' className='slider' id='distance' />
-                    <div className='row'>
-                        <ul className ='distanceList'>
-                            <li className='offset-s1 col s2'>5</li>
-                            <li className='col s2'>15</li>
-                            <li className='col s2'>30</li>
-                            <li className='col s2'>30+</li> 
-                        </ul>
-                    </div>
-                    </div>
-                    <div className='row'>       
+                    </div> */}
+                        <Row>
+                            <Input s={12} type ='select' label = 'Distance' defaultValue ='Nearby'>
+                                <option value = '1'>5 miles</option>
+                                <option value = '2'>15 miles</option>
+                                <option value = '3'>15+ miles</option>
+                            </Input>
+                        </Row>
+                    {/* <div className ='distance'>
+                        <div className='row'>
+                            <label>Distance</label>
+                            <p>(in Miles)</p>
+                            <input className='col offset-s1 s10' type ='range' min='1' max='4' value='1' className='slider' id='distance' />
+                            </div>
+                        <div className='row'>
+                            <ul className ='distanceList'>
+                                <li className='offset-s1 col s2'>5</li>
+                                <li className='col s2'>15</li>
+                                <li className='col s2'>30</li>
+                                <li className='col s2'>30+</li> 
+                            </ul>
+                        </div>
+                    </div> */}
+                        <Row>
+                    <Input s={12} type ='select' label = 'Experience' defaultValue ='All Available'>
+                        <option value = '1'>0-2 years</option>
+                        <option value = '2'>2-5 years</option>
+                        <option value = '3'>5+ years</option>
+                    </Input>
+                </Row>
+                    {/* <div className='row'>       
                         <label>Experience</label>
                         <p>(years expected)</p>
                         <input className='col offset-s1 s10' type ='range' min='1' max='3' value='1' className='slider' id='experience' />
@@ -36,8 +60,15 @@ class Filters extends Component {
                                 <li className='col offset-s1 s3'>5+</li> 
                             </ul>
                         </div>
-                    </div>
-                    <div className='row'>
+                    </div> */}
+                        <Row>
+                            <Input s={12} type ='select' label = 'Posted Within' defaultValue ='All'>
+                                <option value = '1'>7 days</option>
+                                <option value = '2'>14 days</option>
+                                <option value = '3'>30 days</option>
+                            </Input>
+                        </Row>
+                    {/* <div className='row'>
                         <label>Posted Within</label>
                         <input className= 'col offset-s1 s10' type ='range' min='1' max='3' value='1' className='slider' id='datePosted' />
                         <div className='row'>
@@ -47,8 +78,8 @@ class Filters extends Component {
                                 <li className='col offset-s1 s3'>30+</li> 
                             </ul>
                         </div>
-                    </div>
-                    <label>Employment Type</label>
+                    </div> */}
+                    {/* <label>Employment Type</label>
                     <form>
                         <div className='row'>
                             <label>
@@ -68,7 +99,13 @@ class Filters extends Component {
                                 <span>Full-Time</span>
                             </label>
                         </div>
-                    </form>
+                    </form> */}
+                    <Row>
+                        <Input name='employmentType' type='checkbox' value = 'contract' label='Contract' />
+                        <Input name='employmentType' type='checkbox' value = 'internship' label='Internship' />
+                        <Input name='employmentType' type='checkbox' value = 'partTime' label='Part-Time' />
+                        <Input name='employmentType' type='checkbox' value = 'fullTime' label='Full Time' />
+                    </Row>
                 </div>
             </div>
         )
