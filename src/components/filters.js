@@ -4,15 +4,22 @@ import {Row, Input} from 'react-materialize';
 
 
 class Filters extends Component {
+    
     render(){
+        const minSalary = "All Available";
         return (
             <div>
                 <div className ="sidebar">
                 <Row>
-                    <Input s={12} type ='select' label = 'Salary' defaultValue ='Min Salary'>
-                        <option value = '1'> $30,000 - $50,000</option>
-                        <option value = '2'> $50,000 - $70,000</option>
-                        <option value = '3'> $70,000+</option>
+                    <Input s={6} type ='select' label = 'Min Salary' defaultValue = {minSalary}>
+                        <option value = '1'> $0</option>
+                        <option value = '2'> $30K</option>
+                        <option value = '3'> $50K+</option>
+                    </Input>
+                    <Input s={6} type ='select' label = 'Max Salary' defaultValue = {minSalary}>
+                        <option value = '1'> $30K</option>
+                        <option value = '2'> $50K</option>
+                        <option value = '3'> $70K+</option>
                     </Input>
                 </Row>
                     {/* <label>Salary</label>
