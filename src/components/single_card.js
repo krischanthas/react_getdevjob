@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './single_card.css';
-import {Input} from 'react-materialize';
+import BusinessModal from './business_modal';
+
+import {Modal, Input, Button} from 'react-materialize';
 
 class Card extends Component{
     constructor(props){
         super(props);
-        
+
         this.state = {
         isChecked: false
         }
@@ -26,7 +28,7 @@ class Card extends Component{
         console.log('link', linkQuery)
 
         return (
-            <div >
+    <div>   
         <div className='sc-cardContainer card-panel'>
             <div className = 'sc-leftColumn'>
                 <div className ='BusinessInfo'>
@@ -50,7 +52,9 @@ class Card extends Component{
                 </div>
                 <div className='buttonArea'> 
                     <button className='btn btn-style indigo'>Save</button>
-                    <Link className='btn btn-style' to={linkQuery}>More Info</Link>
+                    <Modal className="modalStyle" trigger={<Button className='btn btn-style'>More Info</Button>}>
+                        <BusinessModal {...this.props}/>
+                    </Modal>
                     <button className ='btn btn-style'>Share</button>
                 </div>
             </div>
@@ -64,4 +68,6 @@ class Card extends Component{
 }
 
 export default Card;
+
+    
 
