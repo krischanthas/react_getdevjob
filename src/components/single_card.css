@@ -14,7 +14,6 @@
     height: 100%;
     display: inline-block;
     position: relative;
-    vertical-align: ;
 }
 
 .sc-jobDetailsList {
@@ -62,3 +61,12 @@
     -webkit-box-orient: vertical;  
 }
 
+.modalStyle {
+    height: 100%;
+    width: 80%;
+}
+
+.modal-footer{
+    position: absolute;
+    bottom:0;
+}

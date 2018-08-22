@@ -21,12 +21,11 @@
 } */
 
 .modalBody{
-    position: absolute !important;
+    position: absolute;
     top:10%;
     left:50%;
     transform: translateX(-50%);
     z-index:4;
-
 }
 
 .bm-jobDescription{
