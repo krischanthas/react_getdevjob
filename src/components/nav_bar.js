@@ -7,14 +7,14 @@ class NavBar extends Component {
 		return (
 			<div className='top-nav'>
 				<ul>
-                    <SideNav
-						trigger = {<Button>Filters</Button>}
-						options={{closeOnClick:true}}
-					>
-						<SideNavItem>
-							<Filters />
-						</SideNavItem>
-					</SideNav>
+              {/* <SideNav
+                trigger = {<Button className = "sideTrigger">Filters</Button>}
+                options={{closeOnClick:false}}
+              >
+              <SideNavItem>
+                <Filters />
+              </SideNavItem>
+            </SideNav> */}
                     <li>Title/Location</li>
                     <li> 4 out of 100 Jobs Found</li>
                     <li>Saved</li>

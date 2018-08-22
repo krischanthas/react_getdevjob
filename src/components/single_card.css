@@ -1,6 +1,6 @@
 .sc-cardContainer {
     height:30%;
-    border: 2px solid black;
+    border: 2px solid black;    
 }
 
 .sc-leftColumn{
@@ -39,7 +39,6 @@
     width: 60%;
    
 }
-
 .buttonArea .btn-style{
     margin-top: 25%;        
     width: 60%;
