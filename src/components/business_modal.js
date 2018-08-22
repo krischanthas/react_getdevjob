@@ -20,7 +20,7 @@ class BusinessModal extends Component {
                 <div className='leftColumn col s6'>
                     <div className="row">
                         <button className='btn col offset-s2 s2 green lighten-1 waves-light'>Save</button>
-                        <button className='btn col offset-s1 s2 green lighten-1'>Apply!</button>
+                        <button className='btn col offset-s1 s2 green lighten-1'>Apply</button>
                         <button className='btn col offset-s1 s2'>Share</button>
                     </div>
                     <div className='bm-companyName center'>
@@ -33,7 +33,6 @@ class BusinessModal extends Component {
               
                 </div>
                 <div className='rightColumn col s6'>
-                   
                     <div className='row'>   
                         <div className ="bm-map">
                            <GoogleMap />
