@@ -79,7 +79,7 @@ class SearchResults extends Component {
 				leftArray.push(temp);
 				alt = 1-alt;
 			} else {
-				let temp = <Card key = {index} pullID = {index} details = {this.state.response[index]}{...this.props} />
+				let temp = <Card key = {index} pullId = {index} details = {this.state.response[index]}{...this.props} />
 				rightArray.push(temp);
 				alt = 1-alt;
 			}

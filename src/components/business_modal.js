@@ -11,8 +11,11 @@ class BusinessModal extends Component {
     }
 
     render(){
+        console.log('MODAL PROPS:', this.props);
 
-        const {title, company_name, post_date, description } = this.props.details.job[0];
+        const { lat, lng, pullId, details, isOpen } = this.props;
+
+        const {title, company_name, post_date, description } = details.job[0];
         return (
             <div className="container modalBody">
             <div className='modalPosition'>
@@ -35,7 +38,7 @@ class BusinessModal extends Component {
                 <div className='rightColumn col s6'>
                     <div className='row'>   
                         <div className ="bm-map">
-                           <GoogleMap />
+                           <GoogleMap lat={lat} lng={lng} id={pullId} isOpen={isOpen} />
                         </div>
                         <div className='bm-jobDetails'>
                             <label>Job Description</label>
