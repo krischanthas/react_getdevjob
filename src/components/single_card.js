@@ -50,12 +50,10 @@ class Card extends Component{
                     <ul className='sc-jobDetailsList'>
                         <li>{title}</li>
                         <li>{company_name}</li>
-                        <li>Irvine, CA 92618</li>
-                        <li>60-80K Salary</li>
                     </ul>
                 </div>
                 <div className='sc-jobDescription'>
-                        <p>{description}</p>       
+                        <p dangerouslySetInnerHTML={{__html:description}}></p>     
                 </div>
                 <div className='datePosted'>
                     Date Posted: {post_date};

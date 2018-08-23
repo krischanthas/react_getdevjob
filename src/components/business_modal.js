@@ -42,7 +42,7 @@ class BusinessModal extends Component {
                         </div>
                         <div className='bm-jobDetails'>
                             <label>Job Description</label>
-                            <p className ="bm-jobDescription"> {description}
+                            <p className ="bm-jobDescription" dangerouslySetInnerHTML={{__html:description}}>
                                    </p>
                         </div>
                     </div>
