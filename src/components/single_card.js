@@ -30,12 +30,12 @@ class Card extends Component{
     }
 
     render(){
-
+        console.log("NEW OBJECT TO PARSE    :",this.props.details.job[0]);
         const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
         console.log('link', linkQuery)
-        let lat = 33.650302 + parseInt(this.props.pullId);
-        let lng = -117.755732 + parseInt(this.props.pullId);
+        let lat = parseFloat(this.props.details.job[0].location_id.lat);
+        let lng = parseFloat(this.props.details.job[0].location_id.lng);
 
         console.log('PULL ID:', this.props.pullId);
         console.log('PULL ID:', parseInt(this.props.pullId));
@@ -50,12 +50,10 @@ class Card extends Component{
                     <ul className='sc-jobDetailsList'>
                         <li>{title}</li>
                         <li>{company_name}</li>
-                        <li>Irvine, CA 92618</li>
-                        <li>60-80K Salary</li>
                     </ul>
                 </div>
                 <div className='sc-jobDescription'>
-                        <p>{description}</p>       
+                        <p dangerouslySetInnerHTML={{__html:description}}></p>     
                 </div>
                 <div className='datePosted'>
                     Date Posted: {post_date};
