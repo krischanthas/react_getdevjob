@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Tabs, Tab} from 'react-materialize';
 import './bm-tabs.css';
 
+
 class TabsInfo extends Component{
 constructor(props){
     super(props);
@@ -14,7 +15,10 @@ constructor(props){
 }
   
 render(){
-    console.log(this.state);
+    console.log('Yo this props homie' ,this.props.details.job[0]);
+    const {post_date} = this.props.details.job[0];
+    console.log(post_date);
+    const{company_website, linkedin_url, ocr_url} = this.props.details.job[0].company_id;
     return(
             <Tabs className="z-depth-1 tabs-fixed-width">
                 <Tab title="Salary" active>
@@ -32,8 +36,7 @@ render(){
                         <div className='col s12' id='Details'>
                             <ul className = "bm-details center">
                                 <li>Full Time</li>
-                                <li>Hours of Operatiom</li>
-                                <li>7:00 AM - 5:00 PM </li>
+                                <li>{post_date}</li>
                                 <li>Phone:</li>
                                 <li>(555)555-5555</li>
                             </ul>
@@ -45,11 +48,11 @@ render(){
                         <div id='Learn More' className ='col s12'>
                             <div className='row'>
                                 <p className='center'>Find out more details about the company</p>
-                                <button className='btn col offset-s4 s4 blue'>Research Business</button>
+                                <a href = {ocr_url}  target ="_blank" className='btn col offset-s4 s4 blue' >Research Business</a>
                             </div>
                             <div className='row'>
                                 <p className='center'>Do you know anyone working here?</p>
-                                <button className='btn col offset-s4 s4 blue'>LinkedIn</button>
+                                <a href = {linkedin_url} target= '_blank'className='btn col offset-s4 s4 blue' >LinkedIn</a>
                             </div>
                         </div>
                     </div>

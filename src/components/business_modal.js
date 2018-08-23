@@ -16,6 +16,7 @@ class BusinessModal extends Component {
         const { lat, lng, pullId, details, isOpen } = this.props;
 
         const {title, company_name, post_date, description } = details.job[0];
+        const {listing_url} = details.job[0];
         return (
             <div className="container modalBody">
             <div className='modalPosition'>
@@ -23,7 +24,7 @@ class BusinessModal extends Component {
                 <div className='leftColumn col s6'>
                     <div className="row">
                         <button className='btn col offset-s2 s2 green lighten-1 waves-light'>Save</button>
-                        <button className='btn col offset-s1 s2 green lighten-1'>Apply</button>
+                        <a href={listing_url} target ="_blank" className='btn col offset-s1 s2 green lighten-1'>Apply</a>
                         <button className='btn col offset-s1 s2'>Share</button>
                     </div>
                     <div className='bm-companyName center'>
@@ -32,7 +33,7 @@ class BusinessModal extends Component {
                     <div className='bm-jobTitle center'>
                         {title}
                     </div>
-                    <TabsInfo />
+                    <TabsInfo {...this.props}/>
               
                 </div>
                 <div className='rightColumn col s6'>
