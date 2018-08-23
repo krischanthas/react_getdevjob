@@ -16,7 +16,6 @@ constructor(props){
 render(){
     console.log(this.state);
     return(
-        <div>
             <Tabs className="z-depth-1 tabs-fixed-width">
                 <Tab title="Salary" active>
                     <div className="section1">
@@ -56,7 +55,6 @@ render(){
                     </div>
                 </Tab>
             </Tabs>
-        </div>
     )
 }
 }

@@ -55,7 +55,7 @@ class Card extends Component{
                     <Modal className="modalStyle" trigger={<Button className='btn btn-style'>More Info</Button>}>
                         <BusinessModal {...this.props}/>
                     </Modal>
-                    <button className ='btn btn-style'>Share</button>
+                    <Link to = {linkQuery} target="_blank" className ='btn btn-style'>Share</Link>
                 </div>
             </div>
         </div>

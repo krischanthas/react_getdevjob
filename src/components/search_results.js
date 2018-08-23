@@ -23,7 +23,7 @@ class SearchResults extends Component {
 					"post_date": "2018-08-08 00:00:00",
 					"listing_url": "https:\/\/us.jooble.org\/desc\/3786682248323373670?ckey=software&rgn=6974&pos=1&elckey=-8730678432586643581&age=304&relb=100&brelb=100&bscr=485,23587&scr=485,23587",
 					"type_id": "1",
-					"description": " \t\t\t\t\t If you are a Software Engineer with experience, please read on! Top Reasons to Work with Us We are a global cloud base logistic company. Looking to as to our engineer team on working with our current platform and adding new features. What You Need for this Position At Least 3 Years of experience and knowledge of: - Python - Django - Postgres - Nginx So, if you are a Software Engineer with experience, please apply today! Applicants must be authorized to work in the U.S. Preferred Skills Python Django Postgres Nginx \t\t\t\t\t \t\t\t\t"
+					"description": " \t\t\t\t\t If you are a Software Engineer with experience, please read on! Top Reasons to Work with Us We are a global cloud base logistic company. Looking to as to our engineer team on working with our current platform and adding new features. What You Need for this Position At Least 3 Years of experience and knowledge of: - Python - Django - Postgres - Nginx So, if you are a Software Engineer with experience, please apply today! Applicants must be authorized to work in the U.S. Preferred Skills Python Django Postgres Nginx If you are a Software Engineer with experience, please read on! Top Reasons to Work with Us We are a global cloud base logistic company. Looking to as to our engineer team on working with our current platform and adding new features. What You Need for this Position At Least 3 Years of experience and knowledge of: - Python - Django - Postgres - Nginx So, if you are a Software Engineer with experie\t\t\t\t\t \t\t\t\t"
 				}]
 			}, {
 				"success": true,
@@ -95,10 +95,10 @@ class SearchResults extends Component {
 		return (
 			<div className = 'main-cont'>
 				<NavBar/>
-				<SideNav
-						  trigger = {<Button className = "sideTrigger">Filters</Button>}
-						  options={{closeOnClick:false}}
-					  >
+					<SideNav
+				  	trigger = {<Button className = "sideTrigger">Filters</Button>}
+				  	options={{closeOnClick:false}}
+					>
 						<SideNavItem>
 							<Filters />
 						</SideNavItem>
