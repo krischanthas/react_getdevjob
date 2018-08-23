@@ -30,12 +30,12 @@ class Card extends Component{
     }
 
     render(){
-
+        console.log("NEW OBJECT TO PARSE    :",this.props.details.job[0]);
         const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
         console.log('link', linkQuery)
-        let lat = 33.650302 + parseInt(this.props.pullId);
-        let lng = -117.755732 + parseInt(this.props.pullId);
+        let lat = parseFloat(this.props.details.job[0].location_id.lat);
+        let lng = parseFloat(this.props.details.job[0].location_id.lng);
 
         console.log('PULL ID:', this.props.pullId);
         console.log('PULL ID:', parseInt(this.props.pullId));

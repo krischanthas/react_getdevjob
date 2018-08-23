@@ -11,7 +11,7 @@ class GoogleMap extends Component {
 
             this.map = new googleMap.Map(this.map, {
                 center: {lat, lng},
-                zoom: 8
+                zoom: 14
             });
         }
     }
