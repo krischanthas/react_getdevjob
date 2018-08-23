@@ -43,8 +43,16 @@
     max-height: 85%;
     top:0;
 }
+
 .sp-btn-style{
     position: relative;
     margin: 3% 0;
     left: 10% !important;
 }
+
+/* 
+@media only screen and (min-width: 993px)
+.container {
+    width: 90%;
+} */
+
