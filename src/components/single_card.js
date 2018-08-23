@@ -10,9 +10,9 @@ class Card extends Component{
         super(props);
 
         this.state = {
-        isChecked: false
+            isChecked: false,
+            modalOpen: false
         }
-
     }
 
     toggleCheckboxChange(event){
@@ -21,12 +21,27 @@ class Card extends Component{
         })
     }
 
+    handleModalOpen(){
+        $(`#modal-${this.props.pullId}`).modal('open');
+
+        this.setState({
+            modalOpen: true
+        });
+    }
+
     render(){
 
         const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
         console.log('link', linkQuery)
+        let lat = 33.650302 + parseInt(this.props.pullId);
+        let lng = -117.755732 + parseInt(this.props.pullId);
 
+        console.log('PULL ID:', this.props.pullId);
+        console.log('PULL ID:', parseInt(this.props.pullId));
+
+        console.log('LAT:', lat);
+        console.log('LNG:', lng);
         return (
     <div>   
         <div className='sc-cardContainer card-panel'>
@@ -52,8 +67,9 @@ class Card extends Component{
                 </div>
                 <div className='buttonArea'> 
                     <button className='btn btn-style indigo'>Save</button>
-                    <Modal className="modalStyle" trigger={<Button className='btn btn-style'>More Info</Button>}>
-                        <BusinessModal {...this.props}/>
+                    <button className="btn" onClick={() => this.handleModalOpen()} className='btn btn-style'>More Info</button>
+                    <Modal id={`modal-${this.props.pullId}`} className="modalStyle">
+                        <BusinessModal  lat={lat} lng={lng} isOpen={this.state.modalOpen} {...this.props}/>
                     </Modal>
                     <button className ='btn btn-style'>Share</button>
                 </div>

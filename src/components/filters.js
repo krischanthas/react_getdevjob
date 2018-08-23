@@ -10,103 +10,39 @@ class Filters extends Component {
         return (
             <div>
                 <div className ="sidebar">
-                <Row>
-                    <Input s={6} type ='select' label = 'Min Salary' defaultValue = {minSalary}>
-                        <option value = '1'> $0</option>
-                        <option value = '2'> $30K</option>
-                        <option value = '3'> $50K+</option>
-                    </Input>
-                    <Input s={6} type ='select' label = 'Max Salary' defaultValue = {minSalary}>
-                        <option value = '1'> $30K</option>
-                        <option value = '2'> $50K</option>
-                        <option value = '3'> $70K+</option>
-                    </Input>
-                </Row>
-                    {/* <label>Salary</label>
-                    <div className='row salary'>
-                        <input className='col s5 offset-s1' type='text' placeholder='Min' />
-                        <input className='col s5 offset-s1 ' type='text' placeholder='Max' />
-                    </div> */}
-                        <Row>
-                            <Input s={12} type ='select' label = 'Distance' defaultValue ='Nearby'>
-                                <option value = '1'>5 miles</option>
-                                <option value = '2'>15 miles</option>
-                                <option value = '3'>15+ miles</option>
-                            </Input>
-                        </Row>
-                    {/* <div className ='distance'>
-                        <div className='row'>
-                            <label>Distance</label>
-                            <p>(in Miles)</p>
-                            <input className='col offset-s1 s10' type ='range' min='1' max='4' value='1' className='slider' id='distance' />
-                            </div>
-                        <div className='row'>
-                            <ul className ='distanceList'>
-                                <li className='offset-s1 col s2'>5</li>
-                                <li className='col s2'>15</li>
-                                <li className='col s2'>30</li>
-                                <li className='col s2'>30+</li> 
-                            </ul>
-                        </div>
-                    </div> */}
-                        <Row>
-                    <Input s={12} type ='select' label = 'Experience' defaultValue ='All Available'>
-                        <option value = '1'>0-2 years</option>
-                        <option value = '2'>2-5 years</option>
-                        <option value = '3'>5+ years</option>
-                    </Input>
-                </Row>
-                    {/* <div className='row'>       
-                        <label>Experience</label>
-                        <p>(years expected)</p>
-                        <input className='col offset-s1 s10' type ='range' min='1' max='3' value='1' className='slider' id='experience' />
-                        <div className='row'>   
-                            <ul className ='experienceList'>
-                                <li className='col offset-s1 s3'>0-2</li>
-                                <li className='col offset-s1 s3'>3-5</li>
-                                <li className='col offset-s1 s3'>5+</li> 
-                            </ul>
-                        </div>
-                    </div> */}
-                        <Row>
-                            <Input s={12} type ='select' label = 'Posted Within' defaultValue ='All'>
-                                <option value = '1'>7 days</option>
-                                <option value = '2'>14 days</option>
-                                <option value = '3'>30 days</option>
-                            </Input>
-                        </Row>
-                    {/* <div className='row'>
-                        <label>Posted Within</label>
-                        <input className= 'col offset-s1 s10' type ='range' min='1' max='3' value='1' className='slider' id='datePosted' />
-                        <div className='row'>
-                            <ul className ='datePostedList'>
-                                <li className='col offset-s1 s3'>0-7</li>
-                                <li className='col offset-s1 s3'>7-30</li>
-                                <li className='col offset-s1 s3'>30+</li> 
-                            </ul>
-                        </div>
-                    </div> */}
-                    {/* <label>Employment Type</label>
-                    <form>
-                        <div className='row'>
-                            <label>
-                                <input type='checkbox' />
-                                <span>Intership</span>
-                            </label>
-                            <label>
-                                <input type='checkbox' />
-                                <span>Contract</span>
-                            </label>
-                            <label>
-                                <input type='checkbox'/>
-                                <span>Part-Time</span>
-                            </label>
-                            <label>
-                                <input type='checkbox' value='full-time'/>
-                                <span>Full-Time</span>
-                            </label>
-                        </div>
-                    </form> */}
+                    <Row>
+                        <Input s={6} type ='select' label = 'Min Salary' defaultValue = {minSalary}>
+                            <option value = '1'> $0</option>
+                            <option value = '2'> $30K</option>
+                            <option value = '3'> $50K+</option>
+                        </Input>
+                        <Input s={6} type ='select' label = 'Max Salary' defaultValue = {minSalary}>
+                            <option value = '1'> $30K</option>
+                            <option value = '2'> $50K</option>
+                            <option value = '3'> $70K+</option>
+                        </Input>
+                    </Row>
+                    <Row>
+                        <Input s={12} type ='select' label = 'Distance' defaultValue ='Nearby'>
+                            <option value = '1'>5 miles</option>
+                            <option value = '2'>15 miles</option>
+                            <option value = '3'>15+ miles</option>
+                        </Input>
+                    </Row>
+                    <Row>
+                        <Input s={12} type ='select' label = 'Experience' defaultValue ='All Available'>
+                            <option value = '1'>0-2 years</option>
+                            <option value = '2'>2-5 years</option>
+                            <option value = '3'>5+ years</option>
+                        </Input>
+                    </Row>
+                    <Row>
+                        <Input s={12} type ='select' label = 'Posted Within' defaultValue ='All'>
+                            <option value = '1'>7 days</option>
+                            <option value = '2'>14 days</option>
+                            <option value = '3'>30 days</option>
+                        </Input>
+                    </Row>
                     <Row>
                         <Input name='employmentType' type='checkbox' value = 'contract' label='Contract' />
                         <Input name='employmentType' type='checkbox' value = 'internship' label='Internship' />
