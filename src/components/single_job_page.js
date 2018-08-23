@@ -2,8 +2,10 @@ import React,{Component} from 'react';
 import GoogleMap from './google_map';
 import './business_modal.css';
 import TabsInfo from './bm_tabs';
+import {Link} from 'react-router-dom';
+import LandingPage from './landing_page.js';
 
-class BusinessModal extends Component {
+class SingleJobPage extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -33,9 +35,8 @@ class BusinessModal extends Component {
                 <div className="row">
                 <div className='leftColumn col s6'>
                     <div className="row">
-                        <button className='btn col offset-s2 s2 green lighten-1 waves-light'>Save</button>
-                        <button className='btn col offset-s1 s2 green lighten-1'>Apply!</button>
-                        <button className='btn col offset-s1 s2'>Share</button>
+                        <Link to = '/' className='btn sp-btn-style col offset-s2 s2 green lighten-1 waves-light'>Home</Link>
+                        <button className='btn sp-btn-style col offset-s1 s2 green lighten-1'>Apply!</button>
                     </div>
                     <div className='bm-companyName center'>
                         {company_name}
@@ -54,8 +55,7 @@ class BusinessModal extends Component {
                         </div>
                         <div className='bm-jobDetails'>
                             <label>Job Description</label>
-                            <p className ="bm-jobDescription"> {description}
-                            </p>
+                            <p className ="bm-jobDescription"> {description}</p>
                         </div>
                     </div>
                 </div>
@@ -68,4 +68,4 @@ class BusinessModal extends Component {
     }
 }
 
-export default BusinessModal;
+export default SingleJobPage;
