@@ -1,0 +1,58 @@
+.bm-map{
+    height:35vmin;
+    width: 100%;
+   
+}
+.bm-companyName, .bm-jobTitle {
+    position: relative;
+    top:5%;
+    margin: 10% 0%;
+    font-size: 5vmin;
+}
+
+.bm-jobTitle{
+    margin-bottom: 15%;
+}
+
+/* .modalPosition {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+.modalBody{
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+    z-index:4;
+}
+
+.bm-jobDescription{
+    overflow: scroll;
+    width:100%;
+    height: 30vmin;
+
+}
+
+.bm-tabs li{
+  z-index: 2;
+}
+
+.modalStyle{
+    max-height: 85%;
+    top:0;
+}
+
+.sp-btn-style{
+    position: relative;
+    margin: 3% 0;
+    left: 10% !important;
+}
+
+/* 
+@media only screen and (min-width: 993px)
+.container {
+    width: 90%;
+} */
+

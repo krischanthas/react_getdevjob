@@ -1,0 +1,72 @@
+.sc-cardContainer {
+    height:30%;
+    border: 2px solid black;    
+}
+
+.sc-leftColumn{
+    width:60%;
+    height:100%;
+    display: inline-block;
+}
+
+.sc-rightColumn{
+    width:35%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.sc-jobDetailsList {
+    list-style-type: none;
+    margin:0;
+    margin-top: -3%;
+    position: relative;
+}
+
+
+.sc-jobDetailsList, .datePosted{
+    font-size: 2vmin;
+}
+.datePosted{
+    color:green;
+}
+
+.buttonArea .btn-style, .appliedStatus{
+    display: block;
+    position:relative;
+    left:50%;
+   /* transform: translateX(-50%);*/
+    width: 60%;
+    top: -6vh;
+    
+}
+.appliedStatus{
+    margin: 0 12%;
+}
+.buttonArea .btn-style{
+    margin-top: 10%;        
+    width: 60%;
+}
+
+.sc-jobDescription{
+    height: 50%;
+    width: 100%;
+    margin: 7% 0 0 0;
+    
+}
+.sc-jobDescription p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;  
+}
+
+.modalStyle {
+    height: 100%;
+    width: 80%;
+}
+
+.modal-footer{
+    position: absolute;
+    bottom:0;
+}
