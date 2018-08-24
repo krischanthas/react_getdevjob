@@ -6,12 +6,24 @@
 .bm-companyName, .bm-jobTitle {
     position: relative;
     top:5%;
-    margin: 10% 0%;
-    font-size: 5vmin;
+    margin: 5% 0%;
+    font-size: 2rem;
 }
+.bm-companyName{
+    display: inline-block;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.bm-companyName img {
+    height:auto;
+}
+
 
 .bm-jobTitle{
     margin-bottom: 15%;
+    font-size: 1rem;
 }
 
 /* .modalPosition {
@@ -50,9 +62,10 @@
     left: 10% !important;
 }
 
-/* 
-@media only screen and (min-width: 993px)
+
+@media only screen and (min-width: 993px){
 .container {
-    width: 90%;
-} */
+    width: 85%;
+} 
+}
 

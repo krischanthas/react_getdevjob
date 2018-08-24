@@ -15,10 +15,9 @@ constructor(props){
 }
   
 render(){
-    console.log('Yo this props homie' ,this.props.details.job[0]);
-    const {post_date} = this.props.details.job[0];
-    console.log(post_date);
-    const{company_website, linkedin_url, ocr_url} = this.props.details.job[0].company_id;
+    const {location_id} = this.props.details.job[0];
+    const{ linkedin_url, ocr_url} = this.props.details.job[0].company_id;
+    const {street,city, state, zip} = location_id;
     return(
             <Tabs className="z-depth-1 tabs-fixed-width">
                 <Tab title="Salary" active>
@@ -36,7 +35,7 @@ render(){
                         <div className='col s12' id='Details'>
                             <ul className = "bm-details center">
                                 <li>Full Time</li>
-                                <li>{post_date}</li>
+                                <li>{street} {city} {state} {zip}</li>
                                 <li>Phone:</li>
                                 <li>(555)555-5555</li>
                             </ul>

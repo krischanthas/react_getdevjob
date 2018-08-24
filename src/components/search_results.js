@@ -159,7 +159,6 @@ class SearchResults extends Component {
 	}
 
 	render() {
-		console.log('Props:', this.props);
 		return (
 			<div className = 'main-cont'>
 				<NavBar/>
