@@ -28,7 +28,7 @@ class SingleJobPage extends Component {
 
     render(){
 
-        const {title, company_name, post_date, description } = this.state.response[0].job[0];
+        const {title, company_name, description } = this.state.response[0].job[0];
         return (
             <div className="container modalBody">
             <div className='modalPosition'>
