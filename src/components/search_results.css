@@ -6,8 +6,6 @@
 	height: 100vh;
 	width: 93vw;
     position: relative;
-    margin: auto;
-
 }
 .top-nav {
 	height: 10%;
@@ -37,7 +35,7 @@
     /*margin-top: 3%;*/
     display: block;
     position: relative;
-    
+    margin-left: 3.3%;
     }
 .search-result{
     margin-left: 5%;
