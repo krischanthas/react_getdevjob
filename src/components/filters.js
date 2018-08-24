@@ -8,6 +8,8 @@ class Filters extends Component {
         super(props);
 
         this.state = {
+            jobtitle:'',
+            location:'',
             minSalary:'',
             maxSalary:'',
             distance:'',
@@ -21,20 +23,13 @@ class Filters extends Component {
     }
     
     handleChange(event){
-        debugger;
-
         const {name, value} = event.currentTarget;
-
         this.setState({
             [name]:value
         })
-       
-
     }
-    handleCheckBox(event){
-        debugger;
-        console.log("Event:" , event);
 
+    handleCheckBox(event){
         const {name, checked} = event.currentTarget;
         if(checked !== false){
             this.setState({
@@ -45,16 +40,26 @@ class Filters extends Component {
                 [name]:false
             })
         }
-
     }
-
-
 
     render(){
         const minSalary = "All Available";
         return (
-            <div>
                 <div className ="sidebar">
+                    <Row>
+                        <Input s={12} type ='select' label = 'Job Title' name="jobTitle" defaultValue = 'Web Developer' onChange={this.handleChange.bind(this)}>
+                                <option value = 'Web Developer'> Web Developer</option>
+                                <option value = 'Front End'> Front End</option>
+                                <option value = 'Back End'> Back End</option>
+                        </Input>
+                    </Row>
+                    <Row>
+                        <Input s={12} type ='select' label = 'City' name="location" defaultValue = 'Irvine' onChange={this.handleChange.bind(this)}>
+                                <option value = 'Web Developer'>Irvine</option>
+                                <option value = 'San Diego'>San Diego</option>
+                                <option value = 'Los Angeles'>Los Angeles</option>
+                        </Input>
+                    </Row>
                     <Row>
                         <Input s={6} type ='select' label = 'Min Salary' name="minSalary" defaultValue = {minSalary} onChange={this.handleChange.bind(this)}>
                             <option value = '1'> $0</option>
@@ -88,16 +93,15 @@ class Filters extends Component {
                             <option value = '3'>30 days</option>
                         </Input>
                     </Row>
-                    <Row>
-                        <Input name='employmentTypeContract' type='checkbox' checked={this.state.employmentTypeContract} value = 'contract' label='Contract'  onChange={this.handleCheckBox.bind(this)} />
-                        <Input name='employmentTypeInternship' type='checkbox' checked={this.state.employmentTypeInternship} value = 'internship' label='Internship'  onChange={this.handleCheckBox.bind(this)} />
-                        <Input name='employmentTypePartTime' type='checkbox' checked={this.state.employmentTypePartTime} value = 'partTime' label='Part-Time'  onChange={this.handleCheckBox.bind(this)}/>
-                        <Input name='employmentTypeFullTime' type='checkbox' checked={this.state.employmentTypeFullTime} value = 'fullTime' label='Full Time'  onChange={this.handleCheckBox.bind(this)}/>
+                    <Row className="checkboxArea">
+                        <Input s={6} name='employmentTypeContract' type='checkbox' checked={this.state.employmentTypeContract} value = 'contract' label='Contract'  onChange={this.handleCheckBox.bind(this)} />
+                        <Input s={6} name='employmentTypeInternship' type='checkbox' checked={this.state.employmentTypeInternship} value = 'internship' label='Internship'  onChange={this.handleCheckBox.bind(this)} />
+                        <Input s={6} name='employmentTypePartTime' type='checkbox' checked={this.state.employmentTypePartTime} value = 'partTime' label='Hourly'  onChange={this.handleCheckBox.bind(this)}/>
+                        <Input s={6} name='employmentTypeFullTime' type='checkbox' checked={this.state.employmentTypeFullTime} value = 'fullTime' label='Salary'  onChange={this.handleCheckBox.bind(this)}/>
                     </Row>
                 </div>
-            </div>
-        )
+            )
+        }
     }
-}
 
 export default Filters;
