@@ -7,6 +7,7 @@
 	width: 93vw;
     position: relative;
     margin: auto;
+
 }
 .top-nav {
 	height: 10%;
@@ -31,7 +32,6 @@
 }
 .cardArea{
     width:100%;
-    top: 10%;
     height: 90%;
     /* border: 2px dotted blue; */
     /*margin-top: 3%;*/
