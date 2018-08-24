@@ -15,9 +15,7 @@ constructor(props){
 }
   
 render(){
-    console.log('Yo this props homie' ,this.props.details.job[0]);
-    const {post_date, location_id} = this.props.details.job[0];
-    console.log(post_date);
+    const {location_id} = this.props.details.job[0];
     const{ linkedin_url, ocr_url} = this.props.details.job[0].company_id;
     const {street,city, state, zip} = location_id;
     return(

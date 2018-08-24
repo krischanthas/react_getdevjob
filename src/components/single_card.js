@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './single_card.css';
 import BusinessModal from './business_modal';
 
-import {Modal, Input, Button} from 'react-materialize';
+import {Modal, Input} from 'react-materialize';
 
 class Card extends Component{
     constructor(props){
@@ -15,8 +15,8 @@ class Card extends Component{
         }
     }
 
-    toggleCheckboxChange(event){
-        setState({
+    toggleCheckboxChange(){
+        this.setState({
             isChecked: true
         })
     }
@@ -30,18 +30,10 @@ class Card extends Component{
     }
 
     render(){
-        console.log("NEW OBJECT TO PARSE    :",this.props.details.job[0]);
         const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
-        console.log('link', linkQuery)
         let lat = parseFloat(this.props.details.job[0].location_id.lat);
         let lng = parseFloat(this.props.details.job[0].location_id.lng);
-
-        console.log('PULL ID:', this.props.pullId);
-        console.log('PULL ID:', parseInt(this.props.pullId));
-
-        console.log('LAT:', lat);
-        console.log('LNG:', lng);
         return (
     <div>   
         <div className='sc-cardContainer card-panel'>

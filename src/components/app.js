@@ -1,8 +1,7 @@
 import React from 'react';
 import LandingPage from './landing_page';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import SearchResults from './search_results';
-import BusinessModal from './business_modal';
 import SingleJobPage from './single_job_page.js';
 
 const App = () => (   

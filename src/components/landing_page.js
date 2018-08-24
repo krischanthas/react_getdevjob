@@ -28,10 +28,9 @@ class LandingPage extends Component {
 		let locationLow = location.toLowerCase().split(' ').join('');
 		let titleNoSpace = title.toLowerCase().split(' ').join('');
 		let linkQuery = titleNoSpace + '/' + locationLow;
-		let routeQuery = '/:' + titleNoSpace + "/" + locationLow;
+		
 		
 		return (
-			
 				<div className ='body-container'>
 					<div className ="left-numbers">
 			            <div className="left-nums">01 &lt;body&gt;</div>
