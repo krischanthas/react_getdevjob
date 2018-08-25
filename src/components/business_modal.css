@@ -6,7 +6,6 @@
 .bm-companyName, .bm-jobTitle {
     position: relative;
     top:5%;
-    margin: 5% 0%;
     font-size: 2rem;
 }
 
@@ -14,6 +13,7 @@
     display: inline-block;
     position: relative;
     left:50%;
+    margin: 5% 0% 0%;
     transform: translateX(-50%);
 }
 
@@ -22,7 +22,7 @@
 }
 
 .bm-jobTitle{
-    margin-bottom: 5%;
+    margin:0% 0% 5%;
     font-size: 1.25rem;
 }
 
@@ -61,4 +61,3 @@
         width: 85%; 
         } 
 }
-

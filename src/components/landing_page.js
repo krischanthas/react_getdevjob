@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import './landing_page.css';
-import SearchResults from './search_results';
-import {
-	BrowserRouter as Router, 
-	Route, 
-	Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LandingPage extends Component {
 	constructor(props){

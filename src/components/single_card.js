@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './single_card.css';
 import BusinessModal from './business_modal';
-
 import {Modal, Input} from 'react-materialize';
 
 class Card extends Component{
