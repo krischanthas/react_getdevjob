@@ -31,6 +31,7 @@ class Card extends Component{
     render(){
         const {title, company_name, post_date, description } = this.props.details.job[0];
         let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
+        
         let lat = parseFloat(this.props.details.job[0].location_id.lat);
         let lng = parseFloat(this.props.details.job[0].location_id.lng);
         return (
@@ -56,7 +57,7 @@ class Card extends Component{
                 </div>
                 <div className='buttonArea'> 
                     <button className='btn btn-style indigo'>Save</button>
-                    <button className="btn" onClick={() => this.handleModalOpen()} className='btn btn-style'>More Info</button>
+                    <button className="btn" onClick={() => this.handleModalOpen()} className='btn btn-style'>More</button>
                     <Modal id={`modal-${this.props.pullId}`} className="modalStyle">
                         <BusinessModal  lat={lat} lng={lng} isOpen={this.state.modalOpen} {...this.props}/>
                     </Modal>
