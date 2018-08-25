@@ -4,6 +4,7 @@ import NavBar from './nav_bar';
 import Card from './single_card';
 import Filters from './filters';
 import { Button, SideNav,SideNavItem } from 'react-materialize';
+import {FaEllipsisV} from 'react-icons/fa';
 
 
 class SearchResults extends Component {
@@ -163,7 +164,7 @@ class SearchResults extends Component {
 			<div className = 'main-cont'>
 				<NavBar/>
 					<SideNav
-				  	trigger = {<Button className = "sideTrigger">Filters</Button>}
+				  	trigger = {<Button className ="black sideTrigger"><FaEllipsisV/>Filters</Button>}
 				  	options={{closeOnClick:false}}
 					>
 						<SideNavItem>
