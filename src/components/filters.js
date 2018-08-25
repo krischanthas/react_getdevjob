@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './filters.css';
 import {Row, Input} from 'react-materialize';
 
-
 class Filters extends Component {
     constructor(props){
         super(props);

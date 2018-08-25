@@ -16,7 +16,7 @@ class BusinessModal extends Component {
             <div className="container modalBody">
                 <div className='modalPosition'>
                     <div className="row">
-                        <div className='bm-leftColumn col s6'>
+                        <div className='bm-leftColumn col s4'>
                             <div className="row">
                                 <button className='btn col offset-s2 s2 green lighten-1 waves-light'>Save</button>
                                 <a href={listing_url} target ="_blank" className='btn col offset-s1 s2 green lighten-1'>Apply</a>
@@ -32,7 +32,7 @@ class BusinessModal extends Component {
                             <TabsInfo {...this.props}/>
               
                         </div>
-                        <div className='bm-rightColumn col s6'>
+                        <div className='bm-rightColumn col s8'>
                             <div className='row'>   
                                 <div className ="bm-map">
                                     <GoogleMap lat={lat} lng={lng} id={pullId} isOpen={isOpen} />

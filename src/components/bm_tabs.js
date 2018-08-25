@@ -3,36 +3,22 @@ import {Tabs, Tab} from 'react-materialize';
 import './bm-tabs.css';
 import SalaryPercentage from './salary_percentage_difference';
 
-
-function findThePercentageDifference(cityAvg , stateAvg){
-    let difference = stateAvg - cityAvg;
-    let payStatus=null;
-    let percentageDifference = (difference / percentageDifference).toFixed(2);
-    if(percentageDifference > 0){
-        payStatus = "higher";
-    } else {
-        payStatus = "lower"
-    }
-    return `This salary is ${percentageDifference} ${payStatus} than the state average.`
-}
-
 class TabsInfo extends Component{
-constructor(props){
-    super(props);
+    constructor(props){
+        super(props);
 
-    this.state = {
-        salary: 'active',
-        details: '',
-        learnMore:''
+        this.state = {
+            salary: 'active',
+            details: '',
+            learnMore:''
+        }
     }
-}
 
-render(){
-    const {location_id} = this.props.details.job[0];
-    const{ linkedin_url, ocr_url, crunchbase_url} = this.props.details.job[0].company_id;
-    const {street,city, state, zip} = location_id;
-
-    console.log("Look at me",this.props);
+    render(){
+        const {location_id} = this.props.details.job[0];
+        const{ linkedin_url, ocr_url, crunchbase_url} = this.props.details.job[0].company_id;
+        const {street,city, state, zip} = location_id;
+        console.log("Look at me",this.props);
     
     return(
             <Tabs className="z-depth-1 tabs-fixed-width">
@@ -79,7 +65,7 @@ render(){
                 </Tab>
             </Tabs>
     )
-}
+    }
 }
 
 
