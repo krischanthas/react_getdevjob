@@ -2,6 +2,9 @@
     height:30%;
     border: 2px solid black;    
 }
+.sc-cardContainer:hover{
+    background-color: lightgray;
+}
 
 .sc-leftColumn{
     width:60%;
