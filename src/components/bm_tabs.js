@@ -15,9 +15,9 @@ class TabsInfo extends Component{
     }
 
     render(){
-        const {location_id} = this.props.details.job[0];
-        const{ linkedin_url, ocr_url, crunchbase_url} = this.props.details.job[0].company_id;
-        const {street,city, state, zip} = location_id;
+        const {location} = this.props.details.company;
+        const{ linkedin_url, ocr_url, crunchbase_url} = this.props.details.company;
+        const {street,city, state, zip} = location;
         console.log("Look at me",this.props);
     
     return(

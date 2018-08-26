@@ -10,7 +10,11 @@ class BusinessModal extends Component {
 
     render(){
         const { lat, lng, pullId, details, isOpen } = this.props;
-        const {title, company_name, description, listing_url, company_id } = details.job[0];
+        const {title, company_name, listing_url, company_id } = details;
+        let {description} = details;
+        if(description===''){
+            description = "<h5>No Job Description Provided</h5>";
+        }
         const {logo} = company_id;
         return (
             <div className="container modalBody">

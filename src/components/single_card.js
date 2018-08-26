@@ -29,11 +29,15 @@ class Card extends Component{
     }
 
     render(){
-        const {title, company_name, post_date, description } = this.props.details.job[0];
-        let linkQuery = this.props.match.url + '/' + this.props.details.job[0].id;
-        
-        let lat = parseFloat(this.props.details.job[0].location_id.lat);
-        let lng = parseFloat(this.props.details.job[0].location_id.lng);
+        console.log('check it out' , this.props);
+        const {title, company_name, post_date } = this.props.details;
+        let {description} = this.props.details;
+        if(description===''){
+            description = "<h5>No Job Description Provided</h5>";
+        }
+        let linkQuery = this.props.match.url + '/' + this.props.details.ID;
+        let lat = parseFloat(this.props.details.company.location.lat);
+        let lng = parseFloat(this.props.details.company.location.lng);
         return (
     <div>   
         <div className='sc-cardContainer card-panel'>
