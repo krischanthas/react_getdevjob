@@ -16,8 +16,10 @@ class TabsInfo extends Component{
 
     render(){
         const {location} = this.props.details.company;
-        const{ linkedin_url, ocr_url, crunchbase_url} = this.props.details.company;
+        const{ linkedin_url, ocr_url, crunchbase_url, salary} = this.props.details.company;
         const {street,city, state, zip} = location;
+        let {city_salary, state_salary} = salary;
+
         console.log("Look at me",this.props);
     
     return(
@@ -25,11 +27,11 @@ class TabsInfo extends Component{
                 <Tab title="Salary" active>
                     <div className="section1">
                         <div className='col s12 bm-salary'>
-                            <div className='center'>Average Salary in Orange County</div>
-                            <div className='center'>$80,073</div>
-                                <SalaryPercentage />  
+                            <div className='center'>Average Salary in {city}</div>
+                            <div className='center'>{city_salary}</div>
+                                <SalaryPercentage {...this.props}/>  
                             <div className='center'>Average Salary in California</div>
-                            <div className='center'> $88,488</div>
+                            <div className='center'> {state_salary}</div>
                         </div>
                     </div>
                 </Tab>
