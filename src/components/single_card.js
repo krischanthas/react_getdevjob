@@ -29,12 +29,12 @@ class Card extends Component{
     }
 
     render(){
-        console.log('check it out' , this.props);
-        const {title, company_name, post_date } = this.props.details;
-        let {description} = this.props.details;
+        const {title, company_name } = this.props.details;
+        let {description, post_date} = this.props.details;
         if(description===''){
             description = "<h5>No Job Description Provided</h5>";
         }
+       //Check if post date is within 7 days of current date
         let linkQuery = this.props.match.url + '/' + this.props.details.ID;
         let lat = parseFloat(this.props.details.company.location.lat);
         let lng = parseFloat(this.props.details.company.location.lng);
