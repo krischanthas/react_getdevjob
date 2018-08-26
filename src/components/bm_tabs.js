@@ -19,8 +19,6 @@ class TabsInfo extends Component{
         const{ linkedin_url, ocr_url, crunchbase_url, salary} = this.props.details.company;
         const {street,city, state, zip} = location;
         let {city_salary, state_salary} = salary;
-
-        console.log("Look at me",this.props);
     
     return(
             <Tabs className="z-depth-1 tabs-fixed-width">
