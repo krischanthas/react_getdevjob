@@ -10,7 +10,6 @@ class BusinessModal extends Component {
 
     render(){
         const { lat, lng, pullId, details, isOpen } = this.props;
-        console.log("Yo these Details   :", details);
         const {title, company_name, listing_url, company } = details;
         let {description} = details;
         if(description===''){
