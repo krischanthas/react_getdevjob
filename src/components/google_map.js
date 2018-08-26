@@ -8,8 +8,13 @@ class GoogleMap extends Component {
         if(!prevProps.isOpen && isOpen){
             this.map = new googleMap.Map(this.map, {
                 center: {lat, lng},
-                zoom: 14
+                zoom: 17
             });
+            this.marker = new google.maps.Marker({
+                position: {lat,lng},
+                map: this.map,
+                title: 'Hello World!'
+              });
         }
     }
     render(){
