@@ -8,7 +8,7 @@ class Filters extends Component {
         super(props);
 
         this.state = {
-            jobtitle:'Web Developer',
+            title:'Web Developer',
             location:'Irvine',
             minSalary:'',
             maxSalary:'',
@@ -56,7 +56,7 @@ class Filters extends Component {
         return (
                 <form className ="sidebar">
                     <Row>
-                        <Input s={12} type ='select' label = 'Job Title' name="jobTitle" defaultValue = 'Web Developer' onChange={this.handleChange.bind(this)}>
+                        <Input s={12} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' onChange={this.handleChange.bind(this)}>
                                 <option value = 'Web Developer'> Web Developer</option>
                                 <option value = 'Front End'> Front End</option>
                                 <option value = 'Back End'> Back End</option>
