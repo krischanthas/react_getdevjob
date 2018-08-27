@@ -8,8 +8,8 @@ class LandingPage extends Component {
 		super(props);
 
 		this.state = {
-			title: '',
-			location: ''
+			title: 'Web Developer',
+			location: 'Irvine'
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
@@ -80,18 +80,16 @@ class LandingPage extends Component {
 		        	</div>
 			        <div className ='container input-container'>
 			            <h1 className="center-align title blue-txt ">getDevJob(<span className = 'orange-txt'>you</span>)</h1>
-			            <form>
+			            <form className = 'lp-form '>
 			                <div className ='row '> 
-			                    <div className='input-field col l6 m6 s12'>
-									<Input s={6} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' onChange={this.handleInputChange.bind(this)}>
+			                    <div className='input-field col offset-l3 offset-m2 l6 m6 s6 '>
+									<Input s={6} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' className = "white-text" onChange={this.handleInputChange.bind(this)}>
                                 		<option value = 'Web Developer'> Web Developer</option>
                                 		<option value = 'Front End'> Front End</option>
                                 		<option value = 'Back End'> Back End</option>
                        				</Input>
 									{/* <input type='text' className ="autocomplete white-text" name = 'title' onChange = {this.handleInputChange}placeholder='Job Title '/> */}
-			                    </div>
-			                    <div className='input-field col l6 m6 s12'>
-								<Input s={6} type ='select' label = 'City' name="location" defaultValue = 'Irvine' onChange={this.handleInputChange.bind(this)}>
+									<Input s={6} type ='select' label = 'City' name="location" defaultValue = 'Irvine' className = "white-text" onChange={this.handleInputChange.bind(this)}>
                                 		<option value = 'Irvine'>Irvine</option>
                                 		<option value = 'San Diego'>San Diego</option>
                                 		<option value = 'Los Angeles'>Los Angeles</option>
