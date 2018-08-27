@@ -8,8 +8,8 @@ class Filters extends Component {
         super(props);
 
         this.state = {
-            jobtitle:'',
-            location:'',
+            jobtitle:'Web Developer',
+            location:'Irvine',
             minSalary:'',
             maxSalary:'',
             distance:'',
@@ -19,6 +19,8 @@ class Filters extends Component {
             employmentTypeInternship: false,
             employmentTypePartTime: false,
             employmentTypeFullTime: false,
+            userLat:'',
+            userLng:'',
         }
     }
     
@@ -69,35 +71,35 @@ class Filters extends Component {
                     </Row>
                     <Row>
                         <Input s={6} type ='select' label = 'Min Salary' name="minSalary" defaultValue = {minSalary} onChange={this.handleChange.bind(this)}>
-                            <option value = '1'> $0</option>
-                            <option value = '2'> $30K</option>
-                            <option value = '3'> $50K+</option>
+                            <option value = '0'> $0</option>
+                            <option value = '30000'> $30K</option>
+                            <option value = '50000'> $50K+</option>
                         </Input>
                         <Input s={6} type ='select' label = 'Max Salary' name='maxSalary'  defaultValue = {minSalary} onChange={this.handleChange.bind(this)} >
-                            <option value = '1'> $30K</option>
-                            <option value = '2'> $50K</option>
-                            <option value = '3'> $70K+</option>
+                            <option value = '30000'> $30K</option>
+                            <option value = '50000'> $50K</option>
+                            <option value = '70000'> $70K+</option>
                         </Input>
                     </Row>
                     <Row>
                         <Input s={12} type ='select' label = 'Distance' name='distance' defaultValue ='Nearby' onChange={this.handleChange.bind(this)}>
-                            <option value = '1'>5 miles</option>
-                            <option value = '2'>15 miles</option>
-                            <option value = '3'>15+ miles</option>
+                            <option value = '5'>5 miles</option>
+                            <option value = '15'>15 miles</option>
+                            <option value = '15+'>15+ miles</option>
                         </Input>
                     </Row>
                     <Row>
                         <Input s={12} type ='select' label = 'Experience' name='experience' defaultValue ='All Available' onChange={this.handleChange.bind(this)}>
-                            <option value = '1'>0-2 years</option>
-                            <option value = '2'>2-5 years</option>
-                            <option value = '3'>5+ years</option>
+                            <option value = '0-2'>0-2 years</option>
+                            <option value = '2-5'>2-5 years</option>
+                            <option value = '5+'>5+ years</option>
                         </Input>
                     </Row>
                     <Row>
                         <Input s={12} type ='select' label = 'Posted Within' name='postedDate' defaultValue ='All' onChange={this.handleChange.bind(this)}>
-                            <option value = '1'>7 days</option>
-                            <option value = '2'>14 days</option>
-                            <option value = '3'>30 days</option>
+                            <option value = '7'>7 days</option>
+                            <option value = '14'>14 days</option>
+                            <option value = '30'>30 days</option>
                         </Input>
                     </Row>
                     <Row className="checkboxArea">
