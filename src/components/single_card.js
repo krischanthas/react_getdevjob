@@ -34,6 +34,8 @@ class Card extends Component{
         if(description===''){
             description = "<h5>No Job Description Provided</h5>";
         }
+
+       
        //Check if post date is within 7 days of current date
         let linkQuery = this.props.match.url + '/' + this.props.details.ID;
         let lat = parseFloat(this.props.details.company.location.lat);

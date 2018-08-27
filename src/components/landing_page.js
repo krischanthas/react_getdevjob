@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './landing_page.css';
 import { Link } from 'react-router-dom';
+import {Input} from 'react-materialize';
 
 class LandingPage extends Component {
 	constructor(props){
@@ -82,10 +83,19 @@ class LandingPage extends Component {
 			            <form>
 			                <div className ='row '> 
 			                    <div className='input-field col l6 m6 s12'>
-			                        <input type='text' className ="autocomplete white-text" name = 'title' onChange = {this.handleInputChange}placeholder='Job Title '/>
+									<Input s={6} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' onChange={this.handleInputChange.bind(this)}>
+                                		<option value = 'Web Developer'> Web Developer</option>
+                                		<option value = 'Front End'> Front End</option>
+                                		<option value = 'Back End'> Back End</option>
+                       				</Input>
+									{/* <input type='text' className ="autocomplete white-text" name = 'title' onChange = {this.handleInputChange}placeholder='Job Title '/> */}
 			                    </div>
 			                    <div className='input-field col l6 m6 s12'>
-			                        <input className ="white-text" name = 'location' type='text' onChange = {this.handleInputChange} placeholder='City, State, Zip'/>
+								<Input s={6} type ='select' label = 'City' name="location" defaultValue = 'Irvine' onChange={this.handleInputChange.bind(this)}>
+                                		<option value = 'Irvine'>Irvine</option>
+                                		<option value = 'San Diego'>San Diego</option>
+                                		<option value = 'Los Angeles'>Los Angeles</option>
+                       				</Input>
 			                    </div>
 			                </div>
 			                <div className='row'>

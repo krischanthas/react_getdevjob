@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './filters.css';
 import {Row, Input} from 'react-materialize';
+// import axios from 'axios';
 
 class Filters extends Component {
     constructor(props){
@@ -41,10 +42,17 @@ class Filters extends Component {
         }
     }
 
+    // async submitFormData(props){
+    //     const resp = await axios.post('url here', this.state);
+
+    //     props.getFilterDate(resp);
+        
+    // }
+
     render(){
         const minSalary = "All Available";
         return (
-                <div className ="sidebar">
+                <form className ="sidebar">
                     <Row>
                         <Input s={12} type ='select' label = 'Job Title' name="jobTitle" defaultValue = 'Web Developer' onChange={this.handleChange.bind(this)}>
                                 <option value = 'Web Developer'> Web Developer</option>
@@ -54,7 +62,7 @@ class Filters extends Component {
                     </Row>
                     <Row>
                         <Input s={12} type ='select' label = 'City' name="location" defaultValue = 'Irvine' onChange={this.handleChange.bind(this)}>
-                                <option value = 'Web Developer'>Irvine</option>
+                                <option value = 'Irvine'>Irvine</option>
                                 <option value = 'San Diego'>San Diego</option>
                                 <option value = 'Los Angeles'>Los Angeles</option>
                         </Input>
@@ -98,7 +106,10 @@ class Filters extends Component {
                         <Input s={6} name='employmentTypePartTime' type='checkbox' checked={this.state.employmentTypePartTime} value = 'partTime' label='Hourly'  onChange={this.handleCheckBox.bind(this)}/>
                         <Input s={6} name='employmentTypeFullTime' type='checkbox' checked={this.state.employmentTypeFullTime} value = 'fullTime' label='Salary'  onChange={this.handleCheckBox.bind(this)}/>
                     </Row>
-                </div>
+                    <Row>
+                    <button className='btn col offset-s2'>Submit Filters</button>
+                    </Row>
+                </form>
             )
         }
     }
