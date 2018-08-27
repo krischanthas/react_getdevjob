@@ -32,7 +32,7 @@ class Card extends Component{
         const {title, company_name } = this.props.details;
         let {description, post_date} = this.props.details;
         if(description===''){
-            description = "<h5>No Job Description Provided</h5>";
+            description = "<br><br><br><br><br><br><h3>No Job Description Provided</h3>";
         }
        //Check if post date is within 7 days of current date
         let linkQuery = this.props.match.url + '/' + this.props.details.ID;
