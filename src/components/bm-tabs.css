@@ -1,11 +1,6 @@
-.bm-salary{
+.bm-salary, .bm-more, .bm-details{
     text-align: center;
-}
-
-.bm-details{
-    position: relative;
-    left:50%;
-    transform: translateX(-50%);
+    margin-top:5vmin;
 }
 
 .tabs .indicator{

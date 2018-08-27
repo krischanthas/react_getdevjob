@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './landing_page.css';
-import SearchResults from './search_results';
-import {
-	BrowserRouter as Router, 
-	Route, 
-	Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import {Input} from 'react-materialize';
 
 class LandingPage extends Component {
 	constructor(props){
 		super(props);
 
 		this.state = {
-			title: '',
-			location: ''
+			title: 'Web Developer',
+			location: 'Irvine'
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
@@ -28,10 +24,9 @@ class LandingPage extends Component {
 		let locationLow = location.toLowerCase().split(' ').join('');
 		let titleNoSpace = title.toLowerCase().split(' ').join('');
 		let linkQuery = titleNoSpace + '/' + locationLow;
-		let routeQuery = '/:' + titleNoSpace + "/" + locationLow;
+		
 		
 		return (
-			
 				<div className ='body-container'>
 					<div className ="left-numbers">
 			            <div className="left-nums">01 &lt;body&gt;</div>
@@ -85,13 +80,20 @@ class LandingPage extends Component {
 		        	</div>
 			        <div className ='container input-container'>
 			            <h1 className="center-align title blue-txt ">getDevJob(<span className = 'orange-txt'>you</span>)</h1>
-			            <form>
+			            <form className = 'lp-form '>
 			                <div className ='row '> 
-			                    <div className='input-field col l6 m6 s12'>
-			                        <input type='text' className ="autocomplete white-text" name = 'title' onChange = {this.handleInputChange}placeholder='Job Title '/>
-			                    </div>
-			                    <div className='input-field col l6 m6 s12'>
-			                        <input className ="white-text" name = 'location' type='text' onChange = {this.handleInputChange} placeholder='City, State, Zip'/>
+			                    <div className='input-field col offset-l3 offset-m2 l6 m6 s6 '>
+									<Input s={6} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' className = "white-text" onChange={this.handleInputChange.bind(this)}>
+                                		<option value = 'Web Developer'> Web Developer</option>
+                                		<option value = 'Front End'> Front End</option>
+                                		<option value = 'Back End'> Back End</option>
+                       				</Input>
+									{/* <input type='text' className ="autocomplete white-text" name = 'title' onChange = {this.handleInputChange}placeholder='Job Title '/> */}
+									<Input s={6} type ='select' label = 'City' name="location" defaultValue = 'Irvine' className = "white-text" onChange={this.handleInputChange.bind(this)}>
+                                		<option value = 'Irvine'>Irvine</option>
+                                		<option value = 'San Diego'>San Diego</option>
+                                		<option value = 'Los Angeles'>Los Angeles</option>
+                       				</Input>
 			                    </div>
 			                </div>
 			                <div className='row'>
