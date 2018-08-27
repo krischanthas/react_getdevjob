@@ -4,8 +4,10 @@
     $output = [
         "success"=>false
     ];
-    // $title = $_GET["title"];
-    // $location = $_GET["location"];
+    $title = $_POST["title"];
+    $location = $_POST["location"];
+    print($title);
+    print($location);
     $query = "SELECT * FROM `jobs`";
     // $query = "SELECT * FROM `jobs` RIGHT JOIN `companies` ON `jobs`.`company_id`=`companies`.`ID`";
     $result = mysqli_query($conn, $query);

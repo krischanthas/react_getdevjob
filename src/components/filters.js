@@ -8,8 +8,8 @@ class Filters extends Component {
         super(props);
 
         this.state = {
-            jobtitle:'',
-            location:'',
+            title:'web',
+            location:'asdsa',
             minSalary:'',
             maxSalary:'',
             distance:'',
@@ -43,7 +43,7 @@ class Filters extends Component {
     }
 
     // async submitFormData(props){
-    //     const resp = await axios.post('url here', this.state);
+    //     const resp = await axios.post('/public/api/get_joblist.php', this.state);
 
     //     props.getFilterDate(resp);
         
