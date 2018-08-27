@@ -1,13 +1,13 @@
 .map,#pano {
     width: 89vmin; 
     height: 35vmin;
-    z-index: 2;
+    z-index: 1;
   }
   #pano{
     position: absolute;
     top:0;
     left:0;
-    z-index:1;
+    z-index:2;
   }
   
   /* Optional: Makes the sample page fill the window. */

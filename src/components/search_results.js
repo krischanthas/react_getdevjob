@@ -178,6 +178,13 @@ class SearchResults extends Component {
 	componentDidMount(){
 		this.populateCards(this.state.response[0].job);
 	}
+
+	getFilterResponseData(respObj){
+		this.setState({
+			response: respObj
+		})
+	}
+
 	populateCards(array){
 		let alt = 0;
 		let leftArray =[];
@@ -208,7 +215,7 @@ class SearchResults extends Component {
 				  	options={{closeOnClick:false}}
 					>
 						<SideNavItem>
-							<Filters />
+							<Filters getFilterData = {this.getFilterResponseData.bind(this)}/>
 						</SideNavItem>
 					</SideNav>
 				<div className = 'cardArea'>
