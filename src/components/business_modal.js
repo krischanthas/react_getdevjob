@@ -6,6 +6,22 @@ import TabsInfo from './bm_tabs';
 class BusinessModal extends Component {
     constructor(props){
         super(props);
+
+        this.state={
+            distance:'',
+            duration:'' 
+        }
+    }
+    componentDidMount(){
+        this.getDrivingData();
+    }
+
+    getDrivingData = (distance,duration) =>{
+        this.setState(
+            {
+                distance:distance,
+                duration:duration,
+            })
     }
 
     render(){
@@ -34,13 +50,14 @@ class BusinessModal extends Component {
                             <div className='bm-jobTitle center'>
                                 {title}
                             </div>
-                            <TabsInfo {...this.props}/>
+                            <TabsInfo {...this.props} distance={this.state.distance} duration = {this.state.duration}/>
               
                         </div>
                         <div className='bm-rightColumn col s8'>
                             <div className='row'>   
                                 <div className ="bm-map">
-                                    <GoogleMap lat={lat} lng={lng} id={pullId} isOpen={isOpen} />
+                                    <GoogleMap lat={lat} lng={lng} id={pullId} isOpen={isOpen} drivingInfo={this.getDrivingData}/>
+                                    <button className = "mapStreetViewToggle">Street View</button>
                                 </div>
                                 <div className='bm-jobDetails'>
                                     <label>Job Description</label>

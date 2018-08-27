@@ -5,23 +5,25 @@ class GoogleMap extends Component {
 
     constructor(props){
         super(props);
-
-        this.state={
-            distance:'',
-            duration:'',
-            duration_in_traffic:''
-        }
-
+        console.log("THIs proPs :", this.props);
     }
 
     componentDidUpdate(prevProps){
-        const {lat, lng, isOpen} = this.props;
-
+        const {lat, lng, isOpen, drivingInfo} = this.props;
         if(!prevProps.isOpen && isOpen){
             let map = this.map = new googleMap.Map(this.map, {
                 center: {lat, lng},
                 zoom: 17
             });
+            let panorama = this.panorama = new googleMap.StreetViewPanorama(
+                this.panorama, {
+                  position: {lat,lng},
+                  pov: {
+                    heading: 34,
+                    pitch: 10
+                  }
+                });
+            map.setStreetView(panorama);
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
@@ -54,15 +56,9 @@ class GoogleMap extends Component {
                 }, function(response, status) {
                   
                     if (status === 'OK') {
-                       console.log("GOOGLE DIRECTION RESPONSE",response.routes[0].legs);
-                       console.log("Distance",response.routes[0].legs[0].distance.text);
-                       console.log("Duration",response.routes[0].legs[0].duration.text);
-                       console.log("Traffic Duration", response.routes[0].legs[0].duration_in_traffic.text);
-                    //    this.setState({
-                    //        distance: response.routes[0].legs[0].distance.text,
-                    //        duration: response.routes[0].legs[0].duration.text,
-                    //        duration_in_traffic: response.routes[0].legs[0].duration_in_traffic.text
-                    //    })
+                        let distance = response.routes[0].legs[0].distance.text
+                        let duration = response.routes[0].legs[0].duration.text
+                        drivingInfo(distance,duration);
                         display.setDirections(response);
                     } else {
                         alert('Could not display directions due to: ' + status);
@@ -74,13 +70,10 @@ class GoogleMap extends Component {
     }
     
     render(){
-        const{distance,duration,duration_in_traffic} = this.state;
         return (
             <div className ="googleContainer">
                 <div ref={(e) => this.map = e} className="map"></div>
-                <p>{distance}</p>
-                <p>{duration}</p>
-                <p>{duration_in_traffic}</p>
+                <div id="pano" ref={(e) => this.panorama = e}></div>
             </div>
         )
     }
