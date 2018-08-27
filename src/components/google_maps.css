@@ -1,14 +1,22 @@
-.map {
-    width: 79vmin; 
+.map,#pano {
+    width: 89vmin; 
     height: 35vmin;
     z-index: 2;
   }
+  #pano{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:1;
+  }
+  
   /* Optional: Makes the sample page fill the window. */
   .googleContainer {
     height: 75%;
     width:75%;
     margin: 0;
     padding: 0;
+    position: relative;
   }
   #description {
     font-family: Roboto;

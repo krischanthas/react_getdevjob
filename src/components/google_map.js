@@ -10,12 +10,20 @@ class GoogleMap extends Component {
 
     componentDidUpdate(prevProps){
         const {lat, lng, isOpen, drivingInfo} = this.props;
-        console.log('still',this.props);
         if(!prevProps.isOpen && isOpen){
             let map = this.map = new googleMap.Map(this.map, {
                 center: {lat, lng},
                 zoom: 17
             });
+            let panorama = this.panorama = new googleMap.StreetViewPanorama(
+                this.panorama, {
+                  position: {lat,lng},
+                  pov: {
+                    heading: 34,
+                    pitch: 10
+                  }
+                });
+            map.setStreetView(panorama);
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
@@ -26,7 +34,7 @@ class GoogleMap extends Component {
                   displayRoute(pos.lat,pos.lng,lat,lng);
                 })
             }
-            function displayRoute(originLat,originLng, destinationLat, destinationLng, props) {
+            function displayRoute(originLat,originLng, destinationLat, destinationLng) {
                 let service = new google.maps.DirectionsService;
                 let display = new google.maps.DirectionsRenderer({
             
@@ -65,6 +73,7 @@ class GoogleMap extends Component {
         return (
             <div className ="googleContainer">
                 <div ref={(e) => this.map = e} className="map"></div>
+                <div id="pano" ref={(e) => this.panorama = e}></div>
             </div>
         )
     }

@@ -57,6 +57,7 @@ class BusinessModal extends Component {
                             <div className='row'>   
                                 <div className ="bm-map">
                                     <GoogleMap lat={lat} lng={lng} id={pullId} isOpen={isOpen} drivingInfo={this.getDrivingData}/>
+                                    <button className = "mapStreetViewToggle">Street View</button>
                                 </div>
                                 <div className='bm-jobDetails'>
                                     <label>Job Description</label>

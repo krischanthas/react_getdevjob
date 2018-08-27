@@ -20,9 +20,6 @@ class TabsInfo extends Component{
         afterComma = salaryArray.slice(0,salaryArray.length-3);
         firstThreeDigits = salaryArray.slice(salaryArray.length-4,salaryArray.length-1);
         firstThreeDigits.unshift(",");
-            
-        
-        console.log(afterComma, firstThreeDigits);
         combinedArrays = afterComma.concat(firstThreeDigits);
         let salaryInDollars ='$' + combinedArrays.join('');
         return salaryInDollars;
@@ -52,11 +49,11 @@ class TabsInfo extends Component{
                     <div className="section2">
                         <div className='col s12' id='Details'>
                             <ul className = "bm-details center">
-                                <li>Company Address</li>
+                                <li>companyAddress()</li>
                                 <li>{street} {city} {state} {zip}</li>
-                                <li>Current Est. Drive Time</li>
+                                <li>estDriveTime()</li>
                                 <li>{this.props.duration}</li>
-                                <li>Distance</li>
+                                <li>distanceFromMe()</li>
                                 <li>{this.props.distance}</li>
 
                             </ul>
