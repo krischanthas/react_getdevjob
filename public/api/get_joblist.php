@@ -1,14 +1,15 @@
 <?php
+    header("Access-Control-Allow-Origin: *");
     require_once("mysql_connect.php");
-
     $output = [
         "success"=>false
     ];
     $title = $_POST["title"];
-    $location = $_POST["location"];
+    $maxSalary = (INT)$_POST["maxSalary"];
+    $minSalary = (INT)$_POST["minSalary"];
+    $postedDate = $_POST["postedDate"];
     print($title);
-    print($location);
-    $query = "SELECT * FROM `jobs`";
+    $query = "SELECT * FROM `jobs` WHERE `title` LIKE '%$title%'";
     // $query = "SELECT * FROM `jobs` RIGHT JOIN `companies` ON `jobs`.`company_id`=`companies`.`ID`";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
@@ -42,6 +43,9 @@
     else{
         $ouput["message"] = "fail";
     }
+    
+    //sort jobs by post-date
+
 
 
     $output = json_encode($output);
