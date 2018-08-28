@@ -19,6 +19,18 @@ class LandingPage extends Component {
 			[name]: value
 		});
 	}
+	// Get users current location on Landing Page to enable search by Distance
+	componentDidMount(){
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+			  var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			  };
+			  
+			})
+		}
+	}
 	render() {
 		let {title, location} = this.state;
 		let locationLow = location.toLowerCase().split(' ').join('');
