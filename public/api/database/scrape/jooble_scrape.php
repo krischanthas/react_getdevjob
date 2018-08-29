@@ -1,5 +1,4 @@
 <?php
-// include("simple_html_dom.php");
     function getJoobleDescription($url) {        
 
         $ch = curl_init();
