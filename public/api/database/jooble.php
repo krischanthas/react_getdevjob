@@ -4,7 +4,8 @@ require_once("scrape/jooble_scrape.php");
 require_once("scrape/salary_scrape.php");
 require_once("api_calls/clear_bit.php");
 require_once("api_calls/google_location.php");
-include("scrape/simple_html_dom.php");
+include("scrape/scraper.php");
+
 $url = "https://us.jooble.org/api/";
 $key = "3fb7e81e-bb94-45d0-af8f-0df47f82bc31";
 
