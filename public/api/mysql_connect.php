@@ -1,3 +1,3 @@
 <?php
-    $conn =mysqli_connect("localhost", "root", "root", "jooble", "8889");
+    $conn =mysqli_connect("54.183.156.193", "getJob", "bananaRacecar", "jooble", "3306");
 ?>
