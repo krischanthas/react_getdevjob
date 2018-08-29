@@ -34,7 +34,7 @@
             $salaryResult = mysqli_query($conn, $salaryQuery);
             if(mysqli_num_rows($salaryResult) > 0){
                 $salaryRow = mysqli_fetch_assoc($salaryResult);
-                $output["jobs"][$count]["company"]["salary"] = $salaryRow;
+                $output["jobs"][$count]["salary"] = $salaryRow;
             }
             $count++;
         }
