@@ -38,6 +38,7 @@
         $type_id = getJobType($currentResultIndex);
         $urlEncodedName= encodeName($company_name);
        
+
         $city = $currentResultIndex->location->area[3];
         $address_query = $urlEncodedName." ".$city;
              
@@ -60,7 +61,9 @@
         else{
             $logo = NULL;
         }
+
         // crunchbase:
+
         if(isset($clearbitObject["crunchbase"]["handle"])===true){
             $crunchbase = "www.crunchbase.com/".$clearbitObject["crunchbase"]["handle"];
         }
