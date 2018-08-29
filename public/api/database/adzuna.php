@@ -40,7 +40,7 @@
        
         
        
-        $city = $currentResultIndex-> location->area[3];
+        $city = $currentResultIndex->location->area[3];
         $address_query = $urlEncodedName." ".$city;
         
         
@@ -63,14 +63,14 @@
         }
         else{
             $logo = NULL;
-        
+        }
 // crunchbase:
         if(isset($clearbitObject["crunchbase"]["handle"])===true){
             $crunchbase = "www.crunchbase.com/".$clearbitObject["crunchbase"]["handle"];
         }
         else{
             $crunchbase = NULL;
-        };
+        }
 
 // run query to check companies table if current index exists in the database
         $checkCompanyExistance = "SELECT * FROM `companies` WHERE `name` = '$company_name'";
@@ -125,7 +125,7 @@
             $salary_id = mysqli_insert_id($conn);
         }
  
-// write query to select titles that are repeated
+        // write query to select titles that are repeated
         $checkJobExistance = "SELECT * FROM `jobs` WHERE `title_name` = '$title_name'";
         $jobCheckQueryResult = mysqli_query($conn, $checkJobExistance);
             
@@ -141,17 +141,18 @@
             (`title`, `company_id`, `description`, `post_date`, `listing_url`, `type_id`, `company_name`, `title_name`, `salary_id`) 
             VALUES ('$listing_title', $company_id, '$description', '$post_date', '$listing_url', $type_id, '$company_name', '$title_name', $salary_id)";
             $jobsInsertQueryResult = mysqli_query($conn, $jobsInsertQuery);  
-                if(mysqli_affected_rows($conn)=== -1){
+            if(mysqli_affected_rows($conn)=== -1){
                     if($description === null){
                         $output['error'][]= "## Jobs description is unavailable, did not insert job";
                     }
                     else {
                         $output['error'][]= "## Jobs insert query error";
                     }   
-                } 
+            } 
         }
     }
     print_r($output);
+    
 //------------------------------------------------------------------------------------------------------------------//
     
 
