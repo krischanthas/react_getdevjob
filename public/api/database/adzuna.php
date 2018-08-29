@@ -8,7 +8,7 @@
 
     $url = "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=79a0aa3c&app_key=c80d29a4d0a23378b7b0f66c95e5aaaf&results_per_page=1&what=back%20end%20developer&location0=US&location1=California&location2=Orange%20County";   
 
-//create request object
+    //create request object
     header('Content-Type: application/json');
     $ch = curl_init();                      
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -25,8 +25,8 @@
         'errors' =>[],
         'message'=> []
     ];
-// loop through the results array and get the title, postDate and listingURL
-    for($i = 0;  $i < count((array)$server_output -> results); $i++){
+    // loop through the results array and get the title, postDate and listingURL
+    for($i = 0;  $i < count((array)$server_output->results); $i++){
         // variables for JOBS table
         $currentResultIndex = $server_output->results[$i];
         $company_name = $currentResultIndex->company->display_name;
@@ -38,18 +38,14 @@
         $type_id = getJobType($currentResultIndex);
         $urlEncodedName= encodeName($company_name);
        
-        
-       
-        $city = $currentResultIndex-> location->area[3];
+        $city = $currentResultIndex->location->area[3];
         $address_query = $urlEncodedName." ".$city;
-        
-        
-            
+             
         $ocr_url = "https://www.ocregister.com/?s=".$company_name."&orderby=date&order=desc";
         $company_website = getDomain($urlEncodedName);    
         $clearbitObject = getClearbitObj($company_website);
         
-// linkedIn: 
+        // linkedIn: 
         if(isset($clearbitObject["linkedin"]["handle"])=== true){
             $linkedin_url= "www.linkedin.com/".$clearbitObject["linkedin"]["handle"];
         }
@@ -57,33 +53,33 @@
             $linkedin_url = NULL;
         }
         
-//logo:
+        //logo:
         if(isset( $clearbitObject["logo"])=== true){
             $logo = $clearbitObject["logo"];
         }
         else{
             $logo = NULL;
-        
-// crunchbase:
+        }
+        // crunchbase:
         if(isset($clearbitObject["crunchbase"]["handle"])===true){
             $crunchbase = "www.crunchbase.com/".$clearbitObject["crunchbase"]["handle"];
         }
         else{
             $crunchbase = NULL;
-        };
+        }
 
-// run query to check companies table if current index exists in the database
+        // run query to check companies table if current index exists in the database
         $checkCompanyExistance = "SELECT * FROM `companies` WHERE `name` = '$company_name'";
         $companyCheckQueryResult = mysqli_query($conn, $checkCompanyExistance);
 
         if(mysqli_num_rows($companyCheckQueryResult) === 0){
             $query2 = "INSERT INTO `companies` (`name`, `company_website`, `linkedIn_url`, `ocr_url`, `logo`,`crunchbase`) VALUES ('$company_name', '$company_website', '$linkedin_url','$ocr_url', '$logo', '$crunchbase')";
             $companyInsertQueryResult = mysqli_query($conn, $query2);
-        // check if results from company insert query is empty/encountered an error    
+            // check if results from company insert query is empty/encountered an error    
             if(mysqli_affected_rows($conn)=== -1){
                 $output['error'][]= "## Company insert query error";
             }
-// add locations query
+            // add locations query
             $addressObject = getAddress($address_query);
             $fullAddress = $addressObject["fullAddress"];
             $lat = $addressObject["lat"];
@@ -101,7 +97,7 @@
                 $output['error'][]= "## Locations insert query error";
             }
         }
-// Salary:
+        // Salary:
 
         //fill up salaries table
         $titleCity = "$listing_title"."-"."$city";
@@ -125,7 +121,7 @@
             $salary_id = mysqli_insert_id($conn);
         }
  
-// write query to select titles that are repeated
+        // write query to select titles that are repeated
         $checkJobExistance = "SELECT * FROM `jobs` WHERE `title_name` = '$title_name'";
         $jobCheckQueryResult = mysqli_query($conn, $checkJobExistance);
             
@@ -141,17 +137,18 @@
             (`title`, `company_id`, `description`, `post_date`, `listing_url`, `type_id`, `company_name`, `title_name`, `salary_id`) 
             VALUES ('$listing_title', $company_id, '$description', '$post_date', '$listing_url', $type_id, '$company_name', '$title_name', $salary_id)";
             $jobsInsertQueryResult = mysqli_query($conn, $jobsInsertQuery);  
-                if(mysqli_affected_rows($conn)=== -1){
-                    if($description === null){
-                        $output['error'][]= "## Jobs description is unavailable, did not insert job";
-                    }
-                    else {
-                        $output['error'][]= "## Jobs insert query error";
-                    }   
-                } 
+            if(mysqli_affected_rows($conn)=== -1){
+                if($description === null){
+                    $output['error'][]= "## Jobs description is unavailable, did not insert job";
+                }
+                else{
+                    $output['error'][]= "## Jobs insert query error";
+                }   
+            } 
         }
     }
     print_r($output);
+
 //------------------------------------------------------------------------------------------------------------------//
     
 
@@ -159,20 +156,21 @@
         $company_name = strtolower($company_name);
         $company_name = preg_replace('/(corporation|usa|inc|connection|llc|america|services|corp|solutions|research|company|orange county|\.|\,)/','', $company_name);
         return urlencode($company_name);
-    };
+    }
 
 
     function getPostDate($date){
         $microtime = strtotime($date);
         return date('m/d/Y',$microtime);  
-    };
+    }
 
     function getJobTitle($obj){
-    $temp= ($obj->title);
-    $temp = strtolower($temp);
-    $temp = ucfirst($temp);
-    return strip_tags($temp);
-    };
+        $temp= ($obj->title);
+        $temp = strtolower($temp);
+        $temp = ucfirst($temp);
+        return strip_tags($temp);
+    }
+
     function getListingURL($obj){
         return ($obj->redirect_url);
     }
@@ -194,7 +192,8 @@
                 case 'intern':
                     return 3;
             }
-        }else {
+        }
+        else {
             if(preg_match('/full/', $title)){
                 return 1;
             }
