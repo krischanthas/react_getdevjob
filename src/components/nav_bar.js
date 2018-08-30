@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {Input, Col} from 'react-materialize';
 import './nav_bar.css';
+import {connect} from 'react-redux';
 
 
 class NavBar extends Component {
@@ -35,7 +36,7 @@ class NavBar extends Component {
 	}
 	render() {
 		return (
-			<nav className = 'top-nav black'>
+			<nav className = `top-nav {props.navColor + ' '+ props.textColor}`>
 				<div className = 'nav-wrapper'>
 					<Link to = '/' className = 'brand-logo tn-logo'>&lt;gDJ/&gt;</Link>
 					<ul className = 'right nav-bar-items'>
@@ -56,7 +57,14 @@ class NavBar extends Component {
 	}
 }
 
-export default NavBar;
+function mapStateToProps( state ){
+	return{
+		navColor: state.theme.theme.nav,
+		textColor: state.theme.theme.text
+	}
+}
+
+export default connect(mapStateToProps,{})(NavBar);
 
 //<div className = 'col s6 m4 l11 offset-s1 offset-m2 offset-l1 nav-theme'>
 								
