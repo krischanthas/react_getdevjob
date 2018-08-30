@@ -44,9 +44,9 @@ class NavBar extends Component {
 						</li>
 						<div className = {this.state.dropStyle}>
 							<Input s={12} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' onChange={this.handleInputChange.bind(this)}>
-	                            <option value = 'Dark Theme'> Dark Theme</option>
-	                            <option value = 'White as John'> White as John Theme</option>
-	                            <option value = 'Poop Brown'> Poop Brown Theme</option>
+	                            <option value = 'Dark Theme'>Dark Theme</option>
+	                            <option value = 'White as John'>White as John Theme</option>
+	                            <option value = 'Poop Brown'>Poop Brown Theme</option>
 	                        </Input>
                         </div>
 					</ul>	
@@ -58,9 +58,6 @@ class NavBar extends Component {
 
 export default NavBar;
 
-//<div className = 'col s6 m4 l11 offset-s1 offset-m2 offset-l1 nav-theme'>
-								
-//</div>	
 
 
 
