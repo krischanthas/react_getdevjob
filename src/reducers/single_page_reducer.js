@@ -4,8 +4,11 @@ const DEFAULT_STATE = {
     placeholder: true
 };
 
-function singlePageReducer(state = DEFAULT_STATE, action){
+export default (state = DEFAULT_STATE, action){
     switch( action.type){
+        case types.GET_JOB_ID:
+        console.log('Get List Data:', action);
+            return state;
         default: 
         return state;
     }
