@@ -34,7 +34,7 @@
 }
 .hidden{
     opacity: 0;
-    animation: hide 1s linear 1;
+    animation: hide .5s linear 1;
 }
 .shown{
     opacity: 1;

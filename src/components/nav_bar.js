@@ -77,9 +77,6 @@ function mapStateToProps( state ){
 
 export default connect(mapStateToProps,{ setTheme })(NavBar);
 
-//<div className = 'col s6 m4 l11 offset-s1 offset-m2 offset-l1 nav-theme'>
-								
-//</div>	
 
 
 
