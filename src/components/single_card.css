@@ -34,7 +34,7 @@
     bottom: 0;
 }
 .sc-jobDescription:after {
-  content: '';
+
   position: absolute;
   right: 0;
   width: 1em;
