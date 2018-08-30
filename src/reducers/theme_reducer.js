@@ -6,7 +6,7 @@ const DEFAULT_STATE = {
 };
 
 export default(state = DEFAULT_STATE, action ) => {
-    switch(action.types){
+    switch(action.type){
         case types.SET_THEME:
         return {themeName: action.themeName, theme:action.theme};
         default:

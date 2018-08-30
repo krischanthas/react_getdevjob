@@ -1,11 +1,11 @@
 export default {
     light:{
-        nav:'blue',
+        navColor:'blue',
         background: 'white',
         text: 'black-text'
-    }
+    },
     dark: {
-        nav:'black',
+        navColor:'black',
         background: 'gray darken-2',
         text: "white-text"
     }
