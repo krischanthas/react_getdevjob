@@ -47,8 +47,6 @@ try {
     // start wire !!redirects through appcast
     else if(preg_match('/appcast/', $finalUrl)=== 1){
        $output = NULL;
-        
-       
     }
     else {
         $output= NULL;
