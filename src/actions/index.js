@@ -1,11 +1,18 @@
 import types from './types';
-import axios from 'axios';
+import themes from '../themes';
 
-export async function getJobId(){
-    const resp = axios.get();
+const defaultTheme = 'light';
 
+export const setTheme = (themeName = defaultTheme)=>{
+    let theme = themes[themeName];
+
+    if(!theme){
+        theme = themes[defaultTheme];
+        themeName = defaultTheme;
+    }
     return {
-        type: types.GET_JOB_ID,
-        payload:resp
+        type: types.SET_THEME,
+        themeName,
+        theme
     }
 }

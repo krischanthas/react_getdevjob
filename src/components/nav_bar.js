@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem} from 'react-materialize';
+import SetTheme from './SetTheme';
+import { connect } from 'react-redux';
 
-class NavBar extends Component {
 
-	render() {
+const NavBar = props => {
+
 		return (
-			<Navbar className = 'black' fixed = {true} brand = '<GDJ/>' right>
+			<Navbar className = {props.navColor + ' ' + props.textColor} fixed = {true} brand = '<GDJ/>' right>
 				<NavItem>Saved</NavItem>
+				<SetTheme />
 			</Navbar>
 		);
+}
+
+
+function mapStateToProps( state ){
+	return {
+		navColor: state.theme.theme.nav,
+		textColor: state.theme.theme.text
 	}
 }
 
-export default NavBar;
+export default connect(mapStateToProps, {})(NavBar);
 
 
 

@@ -1,3 +1,3 @@
 export default {
-    GET_JOB_ID: 'get_job_id',
-}
+    SET_THEME: 'set_theme',
+};

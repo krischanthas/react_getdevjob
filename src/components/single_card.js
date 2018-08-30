@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import './single_card.css';
 import BusinessModal from './business_modal';
 import {Modal, Input} from 'react-materialize';
-import { connect } from 'react-redux';
-import { getJobId } from "../actions";
+
 
 class Card extends Component{
     constructor(props){
@@ -14,10 +13,6 @@ class Card extends Component{
             isChecked: false,
             modalOpen: false
         }
-    }
-
-    componentDidMount(){
-        this.props.getJobId();
     }
 
     toggleCheckboxChange(){
@@ -85,11 +80,7 @@ class Card extends Component{
 
 }
 
-function mapStateToProps(state){
-
-}
-
-export default connect(mapStateToProps, {getJobId})(Card);
+export default Card;
 
     
 

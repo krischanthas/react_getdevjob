@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import single_page_reducer from './single_page_reducer';
+import theme_reducer from './theme_reducer';
 
 const rootReducer = combineReducers({
-    placeholder: single_page_reducer,
+    theme: theme_reducer,
 });
 
 export default rootReducer;
