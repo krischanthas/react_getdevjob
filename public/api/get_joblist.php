@@ -7,10 +7,10 @@
     $title = $_POST["title"];
     $maxSalary = (INT)$_POST["maxSalary"];
     $minSalary = (INT)$_POST["minSalary"];
-    $postedDate = $_POST["postedDate"];
-    print($title);
-    $query = "SELECT * FROM `jobs` WHERE `title` LIKE '%software%'";
-    // $query = "SELECT * FROM `jobs` RIGHT JOIN `companies` ON `jobs`.`company_id`=`companies`.`ID`";
+
+
+    $query = "SELECT * FROM `jobs` WHERE `title` LIKE '%$title%'";
+
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
         $count = 0;
