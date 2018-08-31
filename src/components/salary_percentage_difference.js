@@ -12,7 +12,7 @@ class SalaryPercentage extends Component{
     }
 
     componentDidMount(){
-        const {city_salary,state_salary} = this.props.details.company.salary;
+        const {city_salary,state_salary} = this.props.details.salary;
         this.findThePercentageDifference(city_salary, state_salary)
     }
 
