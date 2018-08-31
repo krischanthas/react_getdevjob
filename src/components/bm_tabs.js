@@ -26,7 +26,6 @@ class TabsInfo extends Component{
     }
 
     render(){
-        console.log('Eternal Shiny and Chrome',this.props);
         const{ location,linkedin_url, ocr_url, crunchbase_url} = this.props.details.company;
         const {street,city, state, zip} = location;
         let {city_salary, state_salary} = this.props.details.salary;

@@ -16,7 +16,6 @@ class NavBar extends Component {
 		}
 	}
 	componentDidMount(){
-		console.log("Props yo" ,this.props);
 		this.props.setTheme('light');
 	}
 	handleInputChange(event){

@@ -49,12 +49,10 @@ class Filters extends Component {
 
     async submitFormData(event){
         event.preventDefault();
-        console.log(this.state);
         const params = formatPostData(this.state);
-        console.log("data: ", params);
         const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
 
-        props.getFilterDate(resp);
+        props.getFilterData(resp);
         
     }
 
