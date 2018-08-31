@@ -1,15 +1,21 @@
 <?php
     header("Access-Control-Allow-Origin: *");
+    require_once("queries/salary.php");
     require_once("mysql_connect.php");
     $output = [
         "success"=>false
     ];
     $title = $_POST["title"];
-    $maxSalary = (INT)$_POST["maxSalary"];
-    $minSalary = (INT)$_POST["minSalary"];
+    $query = "SELECT * FROM `jobs`";
 
 
-    $query = "SELECT * FROM `jobs` WHERE `title` LIKE '%$title%'";
+    if($_POST["minSalary"] != "" && $_POST["maxSalary"] != ""){
+        $max = (INT)$_POST["maxSalary"];
+        $min = (INT)$_POST["minSalary"];
+        $query = $query . salaryQuery($min ,$max);
+    }
+
+    $query = $query . " AND `title` LIKE '%$title%'";
 
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
