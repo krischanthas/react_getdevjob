@@ -1,6 +1,8 @@
 <?php
     header("Access-Control-Allow-Origin: *");
     require_once("mysql_connect.php");
+    require_once("queries/post_date.php");
+
     $output = [
         "success"=>false
     ];
@@ -9,8 +11,17 @@
     $minSalary = (INT)$_POST["minSalary"];
 
 
-    $query = "SELECT * FROM `jobs` WHERE `title` LIKE '%$title%'";
 
+    $query = "SELECT * FROM `jobs`";
+
+    if($_POST['postedDate'] !== ''){
+        $numberOfDays = $_POST['postedDate'];
+        $query = $query.postDateQuery($numberOfDays);
+    }
+
+
+    $query = $query. "AND `title` LIKE '%$title%'";
+    
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
         $count = 0;
