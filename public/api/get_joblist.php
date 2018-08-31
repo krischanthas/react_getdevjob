@@ -2,6 +2,7 @@
     header("Access-Control-Allow-Origin: *");
     require_once("mysql_connect.php");
     require_once("queries/post_date.php");
+    require_once("queries/job_type.php");
 
     $output = [
         "success"=>false
@@ -13,14 +14,21 @@
 
 
     $query = "SELECT * FROM `jobs`";
+    $flag = false;
+
 
     if($_POST['postedDate'] !== ''){
+        $flag = true;
         $numberOfDays = $_POST['postedDate'];
         $query = $query.postDateQuery($numberOfDays);
     }
-
-
-    $query = $query. "AND `title` LIKE '%$title%'";
+    if($_POST['employmentTypeContract'] === true){
+        
+        $type = "2";
+        $query = $query.jobTypeQuery($type, $flag);
+    }
+    
+    $query = $query. " AND `title` LIKE '%$title%'";
     
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){

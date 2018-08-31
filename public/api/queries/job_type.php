@@ -1,7 +1,13 @@
 <?php
 
-function jobTypeQuery($type){
-    return "AND `jobs`.`type_id` = $type";
+function jobTypeQuery($type, $flag){
+    if($flag){
+        return " AND `jobs`.`type_id` = $type";
+    }
+    else {
+        return " WHERE `jobs`.`type_id` = $type";
+    }
+    
 }
 
 
