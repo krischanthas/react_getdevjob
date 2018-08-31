@@ -8,6 +8,11 @@
     "bundle": "webpack --config webpack.prod.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:8000"
+    }
+  },
   "author": "Jake, John, Kris, Ryan",
   "license": "ISC",
   "repository": {
@@ -15,6 +20,7 @@
     "url": "https://github.com/firecoded/react_getdevjob.git"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

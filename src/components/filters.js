@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './filters.css';
 import {Row, Input} from 'react-materialize';
-// import axios from 'axios';
+import {formatPostData} from "../helpers";
+import axios from 'axios';
 
 class Filters extends Component {
     constructor(props){
@@ -22,8 +23,10 @@ class Filters extends Component {
             userLat:'',
             userLng:'',
         }
+        this.submitFormData = this.submitFormData.bind(this);
+
     }
-    
+
     handleChange(event){
         const {name, value} = event.currentTarget;
         this.setState({
@@ -44,17 +47,24 @@ class Filters extends Component {
         }
     }
 
-    // async submitFormData(props){
-    //     const resp = await axios.post('url here', this.state);
+    async submitFormData(event){
+        event.preventDefault();
+        console.log(this.state);
+        const dataToSend = {
+            details : this.state,
+        }
+       const params = formatPostData(this.state);
+        console.log("data: ", params);
+        const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
 
-    //     props.getFilterDate(resp);
+        // props.getFilterDate(resp);
         
-    // }
+    }
 
     render(){
         const minSalary = "All Available";
         return (
-                <form className ="sidebar">
+                <form className ="sidebar" onSubmit={this.submitFormData}>
                     <Row>
                         <Input s={12} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' onChange={this.handleChange.bind(this)}>
                                 <option value = 'Web Developer'> Web Developer</option>
