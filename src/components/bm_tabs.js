@@ -26,10 +26,10 @@ class TabsInfo extends Component{
     }
 
     render(){
-        const {location} = this.props.details.company;
-        const{ linkedin_url, ocr_url, crunchbase_url, salary} = this.props.details.company;
+        console.log('Eternal Shiny and Chrome',this.props);
+        const{ location,linkedin_url, ocr_url, crunchbase_url} = this.props.details.company;
         const {street,city, state, zip} = location;
-        let {city_salary, state_salary} = salary;
+        let {city_salary, state_salary} = this.props.details.salary;
         city_salary = this.displaySalaryInDollars(city_salary);
         state_salary = this.displaySalaryInDollars(state_salary);
     return(
