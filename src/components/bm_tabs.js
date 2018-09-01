@@ -26,8 +26,8 @@ class TabsInfo extends Component{
     }
 
     render(){
-        console.log('Eternal Shiny and Chrome',this.props);
-        const{ location,linkedin_url, ocr_url, crunchbase_url} = this.props.details.company;
+        console.log("This Props for Business Tabs   :", this.props.details.company);
+        const{ location,linkedin_url, ocr_url, company_website} = this.props.details.company;
         const {street,city, state, zip} = location;
         let {city_salary, state_salary} = this.props.details.salary;
         city_salary = this.displaySalaryInDollars(city_salary);
@@ -64,8 +64,8 @@ class TabsInfo extends Component{
                     <div className="setion3">
                         <div id='Learn More' className ='col s12 bm-more'>
                             <div className='row'>
-                                <p className='center'>Find out more details about the company</p>
-                                <a href = {crunchbase_url}  target ="_blank" className='btn col offset-s4 s4 blue' >Research Business</a>
+                                <p className='center'>Learn about the company through their website</p>
+                                <a href = {company_website}  target ="_blank" className='btn col offset-s4 s4 blue' >Company Website</a>
                             </div>
                             <div className='row'>
                                 <p className='center'>Do you know anyone working here?</p>

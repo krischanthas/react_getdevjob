@@ -16,7 +16,6 @@ class NavBar extends Component {
 		}
 	}
 	componentDidMount(){
-		console.log("Props yo" ,this.props);
 		this.props.setTheme('light');
 	}
 	handleInputChange(event){
@@ -42,7 +41,6 @@ class NavBar extends Component {
 		
 	}
 	render() {
-		console.log(this.props);
 		return (
 			<nav className = {`top-nav ${this.props.navColor} ${this.props.textColor}`}>
 				<div className = 'nav-wrapper'>
@@ -54,7 +52,7 @@ class NavBar extends Component {
 						<div className = {this.state.dropStyle}>
 							<Input s={12} type ='select' label = 'Job Title' name="title" defaultValue = 'Web Developer' onChange={this.handleInputChange.bind(this)}>
 	                            <option value = 'dark'> Dark Theme</option>
-	                            <option value = 'light'> White as John Theme</option>
+	                            <option value = 'light'> Light Theme</option>
 	                            <option value = 'Poop Brown'> Poop Brown Theme</option>
 	                        </Input>
                         </div>
@@ -66,12 +64,13 @@ class NavBar extends Component {
 }
 
 function mapStateToProps( state ){
-	console.log("Look at me!!!!!!", state.theme.themeName);
 	return{
 		
 		theme: state.theme.themeName,
 		navColor: state.theme.theme.navColor,
-		// textColor: state.themes.text
+		textColor: state.theme.theme.text,
+		background: state.theme.theme.background,
+		functionText: state.theme.theme.functionText,
 		}
 }
 
