@@ -7,7 +7,7 @@ import axios from 'axios';
 class Filters extends Component {
     constructor(props){
         super(props);
-
+        
         this.state = {
             title:'Web Developer',
             location:'Irvine',
@@ -52,8 +52,7 @@ class Filters extends Component {
         const params = formatPostData(this.state);
         const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
         console.log("AXIOS FILTER RESPONSE     :", resp);
-        this.props.getFilterData(resp);
-        
+        this.props.getFilterData(resp);   
     }
 
     render(){

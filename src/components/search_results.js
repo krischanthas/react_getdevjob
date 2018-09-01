@@ -21,7 +21,7 @@ class SearchResults extends Component {
 
 	async componentDidMount(){
 		await this.getJobData();
-	    this.populateCards(this.state.response.data.jobs);
+		this.populateCards(this.state.response.data.jobs);
 	}
 
 	getFilterResponseData(respObj){
@@ -32,10 +32,12 @@ class SearchResults extends Component {
 	}
 	
 	async getJobData(){
+		console.log("page 2 props", this.props)
+		const {city, job} = this.props.match.params;
         event.preventDefault();
 		const initialSearchParams = {
-            title:'Web Developer',
-			location:'Irvine',
+            title: 'web developer',
+			location: city,
 			id:'',
             minSalary:'',
             maxSalary:'',
@@ -49,18 +51,18 @@ class SearchResults extends Component {
             userLat:'',
             userLng:'',
         }
-     const params = formatPostData(initialSearchParams);
-		try{
-			const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
-			this.setState({
-				response:resp
-			})
-			}catch(err){
-				console.log('Failed to connect, Error: ', err);
-			}    
+        console.log('init params', initialSearchParams)
+     	
+		const params = formatPostData(initialSearchParams);
+		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
+		console.log("WORK", resp)
+		this.setState({response:resp})
+
+			   
     }
 
 	populateCards(array){
+		
 		let alt = 0;
 		let leftArray =[];
 		let rightArray =[];
@@ -87,7 +89,7 @@ class SearchResults extends Component {
 					<NavBar/>
 					<SideNav
 				  	trigger = {<Button className ="black sideTrigger"><FaEllipsisV/>Filters</Button>}
-				  	options={{closeOnClick:false}}
+				  	options={{closeOnClick:true}}
 					>
 						<SideNavItem>
 							<Filters getFilterData = {this.getFilterResponseData.bind(this)}/>
