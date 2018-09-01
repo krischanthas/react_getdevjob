@@ -35,7 +35,7 @@ class LandingPage extends Component {
 		let {title, location} = this.state;
 		let locationLow = location.toLowerCase().split(' ').join('');
 		let titleNoSpace = title.toLowerCase().split(' ').join('');
-		let linkQuery = titleNoSpace + '/' + locationLow;
+		let linkQuery = 'listings/' + titleNoSpace + '/' + locationLow;
 		
 		
 		return (
@@ -66,7 +66,7 @@ class LandingPage extends Component {
 			            <div className="left-nums">23</div>
 			            <div className="left-nums">24</div>
 			            <div className="left-nums">25</div>
-			            <div className="left-nums">26</div>
+			            <div className="left-nums">26 &lt;a href = &quot;/about-us&quot;&gt;<Link to ="/about-us" className = "blue-text">About Us</Link>&lt;/a&gt;</div>
 			            <div className="left-nums">27</div>
 			            <div className="left-nums">28</div>
 			            <div className="left-nums">29</div>

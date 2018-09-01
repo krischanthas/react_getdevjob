@@ -49,12 +49,16 @@ class SearchResults extends Component {
             userLat:'',
             userLng:'',
         }
-        const params = formatPostData(initialSearchParams);
-		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
-		this.setState({
-			response:resp
-		})       
-	}
+     const params = formatPostData(initialSearchParams);
+		try{
+			const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
+			this.setState({
+				response:resp
+			})
+			}catch(err){
+				console.log('Failed to connect, Error: ', err);
+			}    
+    }
 
 	populateCards(array){
 		let alt = 0;
