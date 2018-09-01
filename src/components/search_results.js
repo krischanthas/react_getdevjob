@@ -24,11 +24,13 @@ class SearchResults extends Component {
 		console.log("Response Data    :",this.state.response.data.job);
 	    this.populateCards(this.state.response.data.jobs);
 	}
+	
 
 	getFilterResponseData(respObj){
 		this.setState({
 			response: respObj
 		})
+		this.populateCards(this.state.response.data.jobs);
 	}
 	
 	async getJobData(){

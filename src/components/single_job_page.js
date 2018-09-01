@@ -5,6 +5,7 @@ import TabsInfo from './bm_tabs';
 import {Link} from 'react-router-dom';
 import LandingPage from './landing_page.js';
 import { formatPostData } from '../helpers';
+import axios from 'axios';
 
 class SingleJobPage extends Component {
     constructor(props){
@@ -58,19 +59,20 @@ class SingleJobPage extends Component {
 
         this.setState({
             response:resp});
+        console.log("what we are recieving from single job call", resp);
         
     }
 
 
 
     render(){
-        console.log("SINGLE PAGE PROPS", this.state);
-        const { lat, lng} = this.state.response[0].job[0].location_id;
-        const {title, company_name, description, listing_url, company_id } = this.state.response[0].job[0];
-        const {logo} = company_id;
+        // console.log("SINGLE PAGE PROPS", this.state);
+        // const { lat, lng} = this.state.response[0].job[0].location_id;
+        // const {title, company_name, description, listing_url, company_id } = this.state.response[0].job[0];
+        // const {logo} = company_id;
         return (
             <div className="container modalBody">
-                <div className='modalPosition'>
+                {/* <div className='modalPosition'>
                     <div className="row">
                         <div className='bm-leftColumn col s4'>
                             <div className="row">
@@ -100,7 +102,7 @@ class SingleJobPage extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

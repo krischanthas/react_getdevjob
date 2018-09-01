@@ -41,7 +41,6 @@ class NavBar extends Component {
 		
 	}
 	render() {
-		console.log(this.props);
 		return (
 			<nav className = {`top-nav ${this.props.navColor} ${this.props.textColor}`}>
 				<div className = 'nav-wrapper'>
