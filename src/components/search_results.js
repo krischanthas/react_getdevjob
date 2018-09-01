@@ -21,7 +21,6 @@ class SearchResults extends Component {
 
 	async componentDidMount(){
 		await this.getJobData();
-		console.log(this.state.response.data.job);
 	    this.populateCards(this.state.response.data.jobs);
 	}
 
@@ -29,13 +28,15 @@ class SearchResults extends Component {
 		this.setState({
 			response: respObj
 		})
+		this.populateCards(this.state.response.data.jobs);
 	}
 	
 	async getJobData(){
         event.preventDefault();
 		const initialSearchParams = {
             title:'Web Developer',
-            location:'Irvine',
+			location:'Irvine',
+			id:'',
             minSalary:'',
             maxSalary:'',
             distance:'',
@@ -49,12 +50,11 @@ class SearchResults extends Component {
             userLng:'',
         }
         const params = formatPostData(initialSearchParams);
-		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
-		console.log('WitNESS ME', resp);
+		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
 		this.setState({
 			response:resp
 		})       
-    }
+	}
 
 	populateCards(array){
 		let alt = 0;
@@ -80,7 +80,7 @@ class SearchResults extends Component {
 	render() {
 		return (
 			<div className = 'main-cont'>
-				<NavBar/>
+					<NavBar/>
 					<SideNav
 				  	trigger = {<Button className ="black sideTrigger"><FaEllipsisV/>Filters</Button>}
 				  	options={{closeOnClick:false}}
@@ -101,6 +101,7 @@ class SearchResults extends Component {
 		);
 	}
 }
+
 
 export default SearchResults;
 

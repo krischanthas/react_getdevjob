@@ -5,7 +5,6 @@ class GoogleMap extends Component {
 
     constructor(props){
         super(props);
-        console.log("THIs proPs :", this.props);
     }
 
     componentDidUpdate(prevProps){
