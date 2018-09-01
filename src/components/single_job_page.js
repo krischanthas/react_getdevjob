@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import GoogleMap from './google_map';
-import './business_modal.css';
+import './single_job_page.css';
 import TabsInfo from './bm_tabs';
 import {Link} from 'react-router-dom';
 import LandingPage from './landing_page.js';
@@ -71,38 +71,38 @@ class SingleJobPage extends Component {
         // const {title, company_name, description, listing_url, company_id } = this.state.response[0].job[0];
         // const {logo} = company_id;
         return (
-            <div className="container modalBody">
-                {/* <div className='modalPosition'>
+            <div className="container sp-Body">
+                <div className='sp-Position'>
                     <div className="row">
-                        <div className='bm-leftColumn col s4'>
+                        <div className='sp-leftColumn col s5'>
                             <div className="row">
                                 
-                                <a href={listing_url} target ="_blank" className='btn col offset-s1 s2 green lighten-1'>Apply</a>
+                                <a target ="_blank" className='btn col offset-s1 s2 green lighten-1'>Apply</a>
                                 
                             </div>
-                            <div className='bm-companyName center'>
-                                <img src={logo} />
-                                <p> {company_name}</p>
+                            <div className='sp-companyName center'>
+                                <img  />
+                                <p> company name</p>
                             </div>
-                            <div className='bm-jobTitle center'>
-                                {title}
+                            <div className='sp-jobTitle center'>
+                               job title
                             </div>
-                            <TabsInfo />
+                            <p> TABS GO HERE </p>
               
                         </div>
-                        <div className='bm-rightColumn col s8'>
+                        <div className='sp-rightColumn col s7'>
                             <div className='row'>   
-                                <div className ="bm-map">
-                                    <GoogleMap lat={lat} lng={lng} id={company_id} isOpen={isOpen} />
+                                <div className ="sp-map">
+                                  <p>GOOGLE MAP GOES HERE</p>
                                 </div>
-                                <div className='bm-jobDetails'>
+                                <div className='sp-jobDetails'>
                                     <label>Job Description</label>
-                                    <p className ="bm-jobDescription" dangerouslySetInnerHTML={{__html:description}}></p>
+                                    <p className ="sp-jobDescription"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         )
     }
