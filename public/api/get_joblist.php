@@ -22,15 +22,22 @@
         $numberOfDays = $_POST['postedDate'];
         $query = $query.postDateQuery($numberOfDays);
     }
-    if($_POST['employmentTypeContract'] === true){
-        
-        $type = "2";
+    if($_POST['employmentTypeContract'] == "true"| $_POST['employmentTypePartTime'] == "true"){
+        $type = 2;
         $query = $query.jobTypeQuery($type, $flag);
+    }
+    if($_POST['employmentTypeFullTime'] == "true"){
+        $type = 1;
+        $query.jobTypeQuery($type, $flag);
+    }
+    if($_POST['employmentTypeInternship'] == "true"){
+        $type = 3;
+        $query.jobTypeQuery($type, $flag);
     }
     
     $query = $query. " AND `title` LIKE '%$title%'";
-    
     $result = mysqli_query($conn, $query);
+
     if(mysqli_num_rows($result) > 0){
         $count = 0;
         while($row = mysqli_fetch_assoc($result)){
