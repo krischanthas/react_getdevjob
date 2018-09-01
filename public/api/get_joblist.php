@@ -12,16 +12,17 @@
     $minSalary = (INT)$_POST["minSalary"];
 
 
-
+// start of query
     $query = "SELECT * FROM `jobs`";
     $flag = false;
 
-
+// Post date filter
     if($_POST['postedDate'] !== ''){
         $flag = true;
         $numberOfDays = $_POST['postedDate'];
         $query = $query.postDateQuery($numberOfDays);
     }
+// job type filter
     if($_POST['employmentTypeContract'] == "true"| $_POST['employmentTypePartTime'] == "true"){
         $type = 2;
         $query = $query.jobTypeQuery($type, $flag);
