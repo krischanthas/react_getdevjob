@@ -34,9 +34,20 @@ class Card extends Component{
         if(description===''){
             description = "<br><br><br><br><br><br><h3>No Job Description Provided</h3>";
         }
-
-       
-       //Check if post date is within 7 days of current date
+        let seperatedPostDate = post_date.split('/');
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        let post_mm = parseInt(seperatedPostDate[0]);
+        let post_dd = parseInt(seperatedPostDate[1]);
+        let post_yyyy = parseInt(seperatedPostDate[2]);
+        let withinAWeek = false;
+        if( mm - post_mm === 1 && dd <6 && post_dd >=25 ){
+            withinAWeek = true
+        }else if(post_mm === mm && (dd-post_dd) <= 7){
+            withinAWeek = true
+        }
         let linkQuery = this.props.match.url + '/' + this.props.details.ID;
         let lat = parseFloat(this.props.details.company.location.lat);
         let lng = parseFloat(this.props.details.company.location.lng);
@@ -53,7 +64,7 @@ class Card extends Component{
                 <div className='sc-jobDescription'>
                         <p dangerouslySetInnerHTML={{__html:description}}></p>     
                 </div>
-                <div className='datePosted'>
+                <div className={`datePosted ${withinAWeek?'green-text':'black-text'} `}>
                     Date Posted: {post_date};
                 </div>
             </div>
