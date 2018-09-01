@@ -21,10 +21,8 @@ class SearchResults extends Component {
 
 	async componentDidMount(){
 		await this.getJobData();
-		console.log("Response Data    :",this.state.response.data.job);
 	    this.populateCards(this.state.response.data.jobs);
 	}
-	
 
 	getFilterResponseData(respObj){
 		this.setState({
@@ -56,7 +54,7 @@ class SearchResults extends Component {
 		this.setState({
 			response:resp
 		})       
-    }
+	}
 
 	populateCards(array){
 		let alt = 0;
@@ -82,7 +80,7 @@ class SearchResults extends Component {
 	render() {
 		return (
 			<div className = 'main-cont'>
-				<NavBar/>
+					<NavBar/>
 					<SideNav
 				  	trigger = {<Button className ="black sideTrigger"><FaEllipsisV/>Filters</Button>}
 				  	options={{closeOnClick:false}}
@@ -103,6 +101,7 @@ class SearchResults extends Component {
 		);
 	}
 }
+
 
 export default SearchResults;
 

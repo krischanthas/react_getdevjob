@@ -10,7 +10,6 @@ export const setTheme = (themeName = defaultTheme) => {
         theme = themes[defaultTheme];
         themeName = defaultTheme;
     }
-    console.log("WITNESS ME!",theme );
     return {
         type: types.SET_THEME,
         themeName,
