@@ -1,22 +1,51 @@
 <?php
     header("Access-Control-Allow-Origin: *");
     require_once("queries/salary.php");
+    require_once("queries/post_date.php");
+    require_once("queries/job_type.php");
     require_once("mysql_connect.php");
     $output = [
         "success"=>false
     ];
     $title = $_POST["title"];
     $query = "SELECT * FROM `jobs`";
-
+    $flag = false;
 
     if($_POST["minSalary"] != "" && $_POST["maxSalary"] != ""){
         $max = (INT)$_POST["maxSalary"];
         $min = (INT)$_POST["minSalary"];
+        $flag = true;
         $query = $query . salaryQuery($min ,$max);
     }
 
-    $query = $query . " AND `title` LIKE '%$title%'";
+    if($_POST["postedDate"] !== ""){
+        $numberOfDays = $_POST["postedDate"];
+        $query = $query.postDateQuery($numberOfDays, $flag);
+        $flag = true;
+    }
+    if($_POST["employmentTypeFullTime"] == "true"){
+        $query = $query.jobTypeQuery("1", $flag);
+        $flag = true;
+    }
+    if($_POST["employmentTypeContract"] == "true" || $_POST["employmentTypePartTime"] == "true"){
+        $query = $query.jobTypeQuery("2", $flag);
+        $flag = true;
 
+    }
+    if($_POST["employmentTypeInternship"] == "true"){
+        $query = $query.jobTypeQuery("3", $flag);
+        $flag = true;
+
+    }
+
+    if($flag){
+        $query = $query . " AND `title` LIKE '%$title%'";
+    }
+    else{
+        $query = $query . " WHERE `title` LIKE '%$title%'";
+    }
+    
+    print($query);
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
         $count = 0;
