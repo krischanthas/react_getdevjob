@@ -8,13 +8,13 @@ import PageNotFound from './page_not_found.js';
 
 const App = () => (   
     	<div className="test" style={{'position':'relative'}}>
-	    		
+	    	<Switch>	
 		    	<Route exact path = '/' component ={LandingPage}/>
 		    	<Route path = '/about-us' component = {AboutUs}/>
 				<Route exact path ='/listings/:job/:city' component = {SearchResults}/>
 				<Route path ='/listings/:job/:city/:job_id' component = {SingleJobPage}/>
 				<Route component = {PageNotFound}/>
-			
+			</Switch>
 		</div>	  
 );
 
