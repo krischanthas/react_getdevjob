@@ -34,9 +34,9 @@ class SearchResults extends Component {
 	async getJobData(){
 		console.log("page 2 props", this.props)
 		const {city, job} = this.props.match.params;
-        event.preventDefault();
+        event.preventDefault();   //will need to address isue with backend about querys accounting for spaces or no spaces
 		const initialSearchParams = {
-            title: 'web developer',
+            title: 'web developer', 
 			location: city,
 			id:'',
             minSalary:'',
@@ -51,11 +51,9 @@ class SearchResults extends Component {
             userLat:'',
             userLng:'',
         }
-        console.log('init params', initialSearchParams)
      	
 		const params = formatPostData(initialSearchParams);
 		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
-		console.log("WORK", resp)
 		this.setState({response:resp})
 
 			   
