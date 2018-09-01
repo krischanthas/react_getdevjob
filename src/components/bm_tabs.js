@@ -26,7 +26,6 @@ class TabsInfo extends Component{
     }
 
     render(){
-        console.log("This Props for Business Tabs   :", this.props.details.company);
         const{ location,linkedin_url, ocr_url, company_website} = this.props.details.company;
         const {street,city, state, zip} = location;
         let {city_salary, state_salary} = this.props.details.salary;
