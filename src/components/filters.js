@@ -54,7 +54,7 @@ class Filters extends Component {
         console.log("data: ", params);
         const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
 
-        this.props.getFilterDate(resp);
+        this.props.getFilterData(resp);
         
     }
 
