@@ -9,7 +9,7 @@ class BusinessModal extends Component {
 
         this.state={
             distance:'',
-            duration:'' 
+            duration:'', 
         }
     }
     componentDidMount(){
@@ -23,6 +23,8 @@ class BusinessModal extends Component {
                 duration:duration,
             })
     }
+
+   
 
     render(){
         const { lat, lng, pullId, details, isOpen } = this.props;
@@ -57,8 +59,8 @@ class BusinessModal extends Component {
                             <div className='row'>   
                                 <div className ="bm-map">
                                     <GoogleMap lat={lat} lng={lng} id={pullId} isOpen={isOpen} drivingInfo={this.getDrivingData}/>
-                                    <button className = "mapStreetViewToggle">Street View</button>
                                 </div>
+                               
                                 <div className='bm-jobDetails'>
                                     <label>Job Description</label>
                                     <p className ="bm-jobDescription" dangerouslySetInnerHTML={{__html:description}}></p>

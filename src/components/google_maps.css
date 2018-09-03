@@ -89,3 +89,7 @@
   #target {
     width: 345px;
   }
+
+  .mapStreetViewToggle{
+    z-index:1000;
+  }
