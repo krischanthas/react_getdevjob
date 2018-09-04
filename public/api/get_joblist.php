@@ -3,7 +3,9 @@
     require_once("queries/salary.php");
     require_once("queries/post_date.php");
     require_once("queries/job_type.php");
+    require_once("queries/get_single_job.php");
     require_once("mysql_connect.php");
+   
     $output = [
         "success"=>false
     ];
@@ -12,7 +14,7 @@
     $query = "SELECT * FROM `jobs`";
     $flag = false;
 // salary
-    if($_POST["minSalary"] != "" && $_POST["maxSalary"] != ""){
+    if($_POST["minSalary"] != "" && $_POST["maxSalary"] !== ""){
         $max = (INT)$_POST["maxSalary"];
         $min = (INT)$_POST["minSalary"];
         $flag = true;
@@ -45,6 +47,12 @@
     }
     else{
         $query = $query . " WHERE `title` LIKE '%$title%'";
+    }
+// Single page
+    if($_POST['id'] !== '' ){
+        $single_page_id = $_POST['id'];
+        $query = getSingleJob($single_page_id);
+    }
 
     $result = mysqli_query($conn, $query);
 
