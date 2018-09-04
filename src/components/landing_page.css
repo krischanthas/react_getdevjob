@@ -5,7 +5,7 @@
 }    
 .body-container  {
     height: 100vh;
-    background-color: black;
+    /*background-color: black;*/
     overflow: hidden;
     position: relative;
 }
@@ -38,4 +38,11 @@ color: #0277bd !important;
 .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
 border-bottom: 1px solid #0277bd !important;
 box-shadow: 0 1px 0 0 #0277bd !important;
+}
+.lp-theme-cont{
+    position: absolute;
+    left: 3%;
+}
+.lp-button-syntax{
+    margin-left: 3%;
 }

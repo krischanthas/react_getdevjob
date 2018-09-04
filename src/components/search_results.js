@@ -21,21 +21,24 @@ class SearchResults extends Component {
 
 	async componentDidMount(){
 		await this.getJobData();
-		console.log(this.state.response.data.job);
-	    this.populateCards(this.state.response.data.jobs);
+		this.populateCards(this.state.response.data.jobs);
 	}
 
 	getFilterResponseData(respObj){
 		this.setState({
 			response: respObj
 		})
+		this.populateCards(this.state.response.data.jobs);
 	}
 	
 	async getJobData(){
-        event.preventDefault();
+		console.log("page 2 props", this.props)
+		const {city, job} = this.props.match.params;
+        event.preventDefault();   //will need to address isue with backend about querys accounting for spaces or no spaces
 		const initialSearchParams = {
-            title:'Web Developer',
-            location:'Irvine',
+            title: 'web developer', 
+			location: city,
+			id:'',
             minSalary:'',
             maxSalary:'',
             distance:'',
@@ -47,16 +50,14 @@ class SearchResults extends Component {
             employmentTypeFullTime: false,
             userLat:'',
             userLng:'',
-        }
-        const params = formatPostData(initialSearchParams);
+        }	
+		const params = formatPostData(initialSearchParams);
 		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
-		console.log('WitNESS ME', resp);
-		this.setState({
-			response:resp
-		})       
+		this.setState({response:resp})		   
     }
 
 	populateCards(array){
+		
 		let alt = 0;
 		let leftArray =[];
 		let rightArray =[];
@@ -77,13 +78,15 @@ class SearchResults extends Component {
 		})
 	}
 
+
+
 	render() {
 		return (
 			<div className = 'main-cont'>
-				<NavBar/>
+					<NavBar/>
 					<SideNav
 				  	trigger = {<Button className ="black sideTrigger"><FaEllipsisV/>Filters</Button>}
-				  	options={{closeOnClick:false}}
+				  	options={{closeOnClick:true}}
 					>
 						<SideNavItem>
 							<Filters getFilterData = {this.getFilterResponseData.bind(this)}/>
@@ -101,6 +104,7 @@ class SearchResults extends Component {
 		);
 	}
 }
+
 
 export default SearchResults;
 
