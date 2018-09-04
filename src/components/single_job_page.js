@@ -71,26 +71,26 @@ class SingleJobPage extends Component {
         // const {title, company_name, description, listing_url, company_id } = this.state.response[0].job[0];
         // const {logo} = company_id;
         return (
-            <div className="container sp-Body">
+            <div className="sp-Body">
                 <div className='sp-Position'>
                     <div className="row">
-                        <div className='sp-leftColumn col s5'>
-                            <div className="row">
-                                
-                                <a target ="_blank" className='btn col offset-s1 s2 green lighten-1'>Apply</a>
+                        <div className='sp-leftColumn'>
+                            <div className="row sp-buttonRow">
+                                <Link to='/' className="btn blue lighten-1">Home</Link> 
+                                <a target ="_blank" className='btn green lighten-1'>Apply</a>
                                 
                             </div>
-                            <div className='sp-companyName center'>
+                            <div className='sp-companyName'>
                                 <img  />
                                 <p> company name</p>
                             </div>
-                            <div className='sp-jobTitle center'>
+                            <div className='sp-jobTitle'>
                                job title
                             </div>
-                            <p> TABS GO HERE </p>
+                            <p className = "sp-tabs"> TABS GO HERE </p>
               
                         </div>
-                        <div className='sp-rightColumn col s7'>
+                        <div className='sp-rightColumn'>
                             <div className='row'>   
                                 <div className ="sp-map">
                                   <p>GOOGLE MAP GOES HERE</p>
