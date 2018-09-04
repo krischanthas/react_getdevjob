@@ -49,7 +49,7 @@
         $query = $query . " WHERE `title` LIKE '%$title%'";
     }
 // Single page
-    if($_POST['id'] !== '' ){
+    if(isset($_POST['id']) && $_POST['id'] !== '' ){
         $single_page_id = $_POST['id'];
         $query = getSingleJob($single_page_id);
     }
