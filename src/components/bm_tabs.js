@@ -64,12 +64,21 @@ class TabsInfo extends Component{
         }
     }
     render(){
+        console.log("BM SINGLE PAGE PROPS", this.props);
+        // if(this.props.singlePage === 'true') {
+        //    const {ocr_url,location} = this.props.tabInfo.company;
+        //    const {full_address, city} = location;
+        //    let {city_salary, state_salary} = this.props.tabInfo.salary;
+        //    city_salary = this.displaySalaryInDollars(city_salary);
+        //    state_salary = this.displaySalaryInDollars(state_salary);
 
+        // } else {
         const {ocr_url, location} = this.props.details.company;
-        const {street,city, state, zip} = location;
+        const {full_address, city} = location;
         let {city_salary, state_salary} = this.props.details.salary;
         city_salary = this.displaySalaryInDollars(city_salary);
         state_salary = this.displaySalaryInDollars(state_salary);
+   // }
     return(
             <Tabs className="z-depth-1 tabs-fixed-width tabsBar">
                 <Tab title="salary" active>
@@ -88,7 +97,7 @@ class TabsInfo extends Component{
                         <div className='col s12' id='Details'>
                             <ul className = "bm-details center">
                                 <li>companyAddress()</li>
-                                <li>{street} {city} {state} {zip}</li>
+                                <li>{full_address}</li>
                                 <li>estDriveTime()</li>
                                 <li>{this.props.duration}</li>
                                 <li>distanceFromMe()</li>
