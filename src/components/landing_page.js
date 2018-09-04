@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './landing_page.css';
 import { Link } from 'react-router-dom';
 import {Input, Col} from 'react-materialize';
+import {connect} from 'react-redux';
+import {setTheme} from '../actions';
 
 class LandingPage extends Component {
 	constructor(props){
@@ -9,7 +11,9 @@ class LandingPage extends Component {
 
 		this.state = {
 			title: 'Web Developer',
-			location: 'Irvine'
+			location: 'Irvine',
+			theme: 'dark',
+			dropStyle: 'nb-drop-content'
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
@@ -21,15 +25,36 @@ class LandingPage extends Component {
 	}
 	// Get users current location on Landing Page to enable search by Distance
 	componentDidMount(){
+		this.props.setTheme('dark');
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
 			  var pos = {
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
-			  };
-			  
+			  }; 
 			})
 		}
+	}
+	dropMenu(){
+		if(this.state.dropStyle === 'nb-drop-content' || this.state.dropStyle === 'hidden nb-drop-content'){
+			this.setState({
+			dropStyle: 'shown nb-drop-content'
+			})
+		} else {
+			this.setState({
+			dropStyle: 'hidden nb-drop-content'
+			})
+		}	
+	}
+	handleThemeChange(event){
+		event.preventDefault();
+		const {value} = event.target;
+		this.setState({
+			theme: value,
+		});
+		
+		this.props.setTheme(value);
+		this.dropMenu();
 	}
 	render() {
 		let {title, location} = this.state;
@@ -39,9 +64,9 @@ class LandingPage extends Component {
 		
 		
 		return (
-				<div className ='body-container'>
+				<div className ={`body-container ${this.props.navColor}`}>
 					<div className ="left-numbers">
-			            <div className="left-nums">01 &lt;body&gt;</div>
+			            <div className="left-nums">01</div>
 			            <div className="left-nums">02</div>
 			            <div className="left-nums">03</div>
 			            <div className="left-nums">04</div>
@@ -90,6 +115,22 @@ class LandingPage extends Component {
 			            <div className="left-nums">49</div>
 			            <div className="left-nums">50</div>
 		        	</div>
+		        	<div className = 'grey-text lp-button-syntax'>&lt;button type = &quot;button&quot; class = &quot;btn drop-down&quot;&gt;</div>
+		        	<div className = 'lp-theme-cont'>
+		            	<Col s={6} m={4} l={3} offset="s1 m2 l3">
+				            <div onClick = {this.dropMenu.bind(this)} className = 'lp-theme  btn black white-text'>
+								Change Theme	
+							</div>
+							<div className = 'grey-text lp-button-syntax'>&lt;/button&gt;</div>
+				            <div className = {this.state.dropStyle}>
+								<Input s={12} l={6} type ='select' name="theme" defaultValue = 'Dark Theme' onChange={this.handleThemeChange.bind(this)}>
+		                            <option value = 'dark'> Dark Theme</option>
+		                            <option value = 'light'> Light Theme</option>
+		                            <option value = 'Poop Brown'> Poop Brown Theme</option>
+		                        </Input>
+	                        </div>
+	                    </Col>    
+                    </div>
 			        <div className ='container input-container'>
 			            <h1 className="center-align lp-title blue-txt ">getDevJob(<span className = 'orange-txt'>you</span>)</h1>
 			            <form className = 'lp-form '>
@@ -111,11 +152,21 @@ class LandingPage extends Component {
 			                	<Link className = "btn orange darken-4 col s2 offset-s5 waves-effect waves-light"to ={linkQuery}>Go	                		
 			                    </Link>	
 			                </div>
-			            </form>
+			            </form>    
 			        </div>    
 				</div>	
 		);
 	}
 }
+function mapStateToProps( state ){
+	return{
+		
+		theme: state.theme.themeName,
+		navColor: state.theme.theme.navColor,
+		textColor: state.theme.theme.text,
+		background: state.theme.theme.background,
+		functionText: state.theme.theme.functionText,
+		}
+}
 
-export default LandingPage;
+export default connect(mapStateToProps,{ setTheme })(LandingPage);

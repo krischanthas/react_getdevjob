@@ -54,24 +54,21 @@ class Card extends Component{
         return (
     <div>   
         <div className='sc-cardContainer card-panel'>
+            <div className={`datePosted ${withinAWeek?'green-text':'black-text'} `}>
+                    Date Posted: {post_date};
+                </div>
             <div className = 'sc-leftColumn'>
                 <div className ='sc-businessInfo'>
                     <ul className='sc-jobDetailsList'>
-                        <li>{title}</li>
-                        <li>{company_name}</li>
+                        <li><strong>{title}</strong></li>
+                        <li><strong>{company_name}</strong></li>
                     </ul>
                 </div>
                 <div className='sc-jobDescription'>
                         <p dangerouslySetInnerHTML={{__html:description}}></p>     
-                </div>
-                <div className={`datePosted ${withinAWeek?'green-text':'black-text'} `}>
-                    Date Posted: {post_date};
-                </div>
+                </div>    
             </div>
             <div className="sc-rightColumn">
-                <div className='appliedStatus'>
-                    <Input className = 'appliedStatus' name='group1' type='checkbox' value='Applied' label='Applied' />                                   
-                </div>
                 <div className='buttonArea'> 
                     <button className='btn btn-style indigo'>Save</button>
                     <button className="btn" onClick={() => this.handleModalOpen()} className='btn btn-style'>More</button>
