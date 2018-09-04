@@ -34,8 +34,8 @@ class SingleJobPage extends Component {
     
     componentDidMount(){
         this.getSingleJobId(this.props.match.params.job_id, this.singleJobItem);
-        this.getJobTitle(this.props.match.params.job, this.singleJobItem);
-        this.getCity(this.props.match.params.city, this.singleJobItem);
+        // this.getJobTitle(this.props.match.params.job, this.singleJobItem);
+        // this.getCity(this.props.match.params.city, this.singleJobItem);
         this.submitSingleJobData();
     }
 
@@ -43,13 +43,13 @@ class SingleJobPage extends Component {
         jobObject.id = id;
     }
 
-    getJobTitle( title, jobObject ){
-        jobObject.title = title;
-    }
+    // getJobTitle( title, jobObject ){
+    //     jobObject.title = title;
+    // }
 
-    getCity( city, jobObject ){
-        jobObject.city = city;
-    }
+    // getCity( city, jobObject ){
+    //     jobObject.city = city;
+    // }
 
     async submitSingleJobData(event){
         console.log("What we are sending to get a single job    :",this.singleJobItem);

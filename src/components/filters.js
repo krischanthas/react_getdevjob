@@ -51,6 +51,11 @@ class Filters extends Component {
         event.preventDefault();
         const params = formatPostData(this.state);
         const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
+
+
+        this.props.getFilterData(resp);
+        
+
         console.log("AXIOS FILTER RESPONSE     :", resp);
         this.props.getFilterData(resp);   
     }
@@ -109,8 +114,8 @@ class Filters extends Component {
                     <Row className="checkboxArea">
                         <Input s={6} name='employmentTypeContract' type='checkbox' checked={this.state.employmentTypeContract} value = 'contract' label='Contract'  onChange={this.handleCheckBox.bind(this)} />
                         <Input s={6} name='employmentTypeInternship' type='checkbox' checked={this.state.employmentTypeInternship} value = 'internship' label='Internship'  onChange={this.handleCheckBox.bind(this)} />
-                        <Input s={6} name='employmentTypePartTime' type='checkbox' checked={this.state.employmentTypePartTime} value = 'partTime' label='Hourly'  onChange={this.handleCheckBox.bind(this)}/>
-                        <Input s={6} name='employmentTypeFullTime' type='checkbox' checked={this.state.employmentTypeFullTime} value = 'fullTime' label='Salary'  onChange={this.handleCheckBox.bind(this)}/>
+                        <Input s={6} name='employmentTypePartTime' type='checkbox' checked={this.state.employmentTypePartTime} value = 'partTime' label='Part'  onChange={this.handleCheckBox.bind(this)}/>
+                        <Input s={6} name='employmentTypeFullTime' type='checkbox' checked={this.state.employmentTypeFullTime} value = 'fullTime' label='Full'  onChange={this.handleCheckBox.bind(this)}/>
                     </Row>
                     <Row>
                         <button className='btn col offset-s2'>Submit Filters</button>
