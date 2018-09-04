@@ -15,7 +15,7 @@
         $max = (INT)$_POST["maxSalary"];
         $min = (INT)$_POST["minSalary"];
         $flag = true;
-        $query = $query . salaryQuery($min ,$max);
+        $query = $query.salaryQuery($min ,$max);
     }
 
     if($_POST["postedDate"] !== ""){
@@ -44,8 +44,7 @@
     else{
         $query = $query . " WHERE `title` LIKE '%$title%'";
     }
-    
-    print($query);
+
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
         $count = 0;
