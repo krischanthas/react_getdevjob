@@ -53,7 +53,6 @@
         $single_page_id = $_POST['id'];
         $query = getSingleJob($single_page_id);
     }
-
     $result = mysqli_query($conn, $query);
 
     if(mysqli_num_rows($result) > 0){
