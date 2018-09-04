@@ -71,7 +71,7 @@ class TabsInfo extends Component{
         city_salary = this.displaySalaryInDollars(city_salary);
         state_salary = this.displaySalaryInDollars(state_salary);
     return(
-            <Tabs className="z-depth-1 tabs-fixed-width">
+            <Tabs className="z-depth-1 tabs-fixed-width tabsBar">
                 <Tab title="salary" active>
                     <div className="section1">
                         <div className='col s12 bm-salary'>

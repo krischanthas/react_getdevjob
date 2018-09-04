@@ -50,13 +50,10 @@ class SearchResults extends Component {
             employmentTypeFullTime: false,
             userLat:'',
             userLng:'',
-        }
-     	
+        }	
 		const params = formatPostData(initialSearchParams);
 		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
-		this.setState({response:resp})
-
-			   
+		this.setState({response:resp})		   
     }
 
 	populateCards(array){
@@ -80,6 +77,8 @@ class SearchResults extends Component {
 				right: rightArray
 		})
 	}
+
+
 
 	render() {
 		return (

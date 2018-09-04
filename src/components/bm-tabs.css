@@ -6,3 +6,7 @@
 .tabs .indicator{
     display:none !important;
 }
+
+.tabsBar {
+    width: 90% !important;
+}
