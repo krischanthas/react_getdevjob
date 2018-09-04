@@ -48,6 +48,10 @@
 }
 .datePosted{
     font-size: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5% 0 0 0;
 }
 
 .sc-leftColumn{

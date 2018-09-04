@@ -16,7 +16,7 @@ class NavBar extends Component {
 		}
 	}
 	componentDidMount(){
-		this.props.setTheme('light');
+		this.props.setTheme('dark');
 	}
 	handleInputChange(event){
 		event.preventDefault();
@@ -24,8 +24,7 @@ class NavBar extends Component {
 		this.setState({
 			theme: value,
 		});
-		this.nextTheme = this.props.theme === 'light'? 'dark':'light';
-		this.props.setTheme(this.nextTheme);
+		this.props.setTheme(value);
 		this.dropMenu();
 	}
 	dropMenu(){

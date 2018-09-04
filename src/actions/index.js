@@ -1,7 +1,7 @@
 import types from './types';
 import themes from '../themes';
 
-const defaultTheme = 'light';
+const defaultTheme = 'dark';
 
 export const setTheme = (themeName = defaultTheme) => {
     let theme = themes[themeName];
