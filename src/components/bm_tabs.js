@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Tabs, Tab} from 'react-materialize';
 import './bm-tabs.css';
 import SalaryPercentage from './salary_percentage_difference';
-import {Link} from 'react-router-dom';
+
 
 class TabsInfo extends Component{
     constructor(props){
@@ -64,21 +64,11 @@ class TabsInfo extends Component{
         }
     }
     render(){
-        console.log("BM SINGLE PAGE PROPS", this.props);
-        // if(this.props.singlePage === 'true') {
-        //    const {ocr_url,location} = this.props.tabInfo.company;
-        //    const {full_address, city} = location;
-        //    let {city_salary, state_salary} = this.props.tabInfo.salary;
-        //    city_salary = this.displaySalaryInDollars(city_salary);
-        //    state_salary = this.displaySalaryInDollars(state_salary);
-
-        // } else {
         const {ocr_url, location} = this.props.details.company;
         const {full_address, city} = location;
         let {city_salary, state_salary} = this.props.details.salary;
         city_salary = this.displaySalaryInDollars(city_salary);
         state_salary = this.displaySalaryInDollars(state_salary);
-   // }
     return(
             <Tabs className="z-depth-1 tabs-fixed-width tabsBar">
                 <Tab title="salary" active>

@@ -14,6 +14,8 @@ class SingleJobPage extends Component {
         super(props);
         this.state = {
             response:null,
+            distance:null,
+            duration:null,
         }
 
         this.singleJobItem = {
@@ -31,6 +33,7 @@ class SingleJobPage extends Component {
             employmentTypeFullTime: false,
             userLat:'',
             userLng:'',
+            
         }
     }
     
@@ -39,29 +42,35 @@ class SingleJobPage extends Component {
         this.submitSingleJobData();
     }
 
+    getDrivingData = (distance,duration) =>{
+        this.setState(
+            {
+                distance:distance,
+                duration:duration,
+            })
+    }
+
+
     getSingleJobId(id, jobObject){
         jobObject.id = id;
     }
 
     async submitSingleJobData(event){
-        console.log("What we are sending to get a single job    :",this.singleJobItem);
         const params = formatPostData(this.singleJobItem);
         
         const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
 
         this.setState({
             response:resp.data.jobs[0]});
-            // console.log("Single Page Response   :", this.state.response);
     }
 
     render(){
-        console.log("Single Page Response   :", this.state.response);
         if(!this.state.response){
             return <h1> Loading </h1>;  // loading animation
         } else {
         let {company_name, description, listing_url, title } = this.state.response;
-        const { company_website, linkedin_url, location, logo, ocr_url } = this.state.response.company;   
-        const { full_address, lat, lng} = location;  
+        const { logo } = this.state.response.company;   
+        
         if(description===''){
             description = "<h5>No Job Description Provided</h5>";
         }
@@ -83,13 +92,12 @@ class SingleJobPage extends Component {
                             <div className='sp-jobTitle'>
                                {title}
                             </div>
-                  
-
+                            <TabsInfo details = {this.state.response} distance ={this.state.distance} duration = {this.state.duration} />
                         </div>
                         <div className='sp-rightColumn'>
                             <div className='row'>   
                                 <div className ="sp-map">
-                                  <p>GOOGLE MAP GOES HERE</p>
+                                  <GoogleMap lat={parseFloat(this.state.response.company.location.lat)} lng={parseFloat(this.state.response.company.location.lng)} isOpen={true} drivingInfo={this.getDrivingData} />
                                 </div>
                                 <div className='sp-jobDetails'>
                                     <label>Job Description</label>
