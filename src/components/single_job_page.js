@@ -17,7 +17,7 @@ class SingleJobPage extends Component {
             response:null,
             distance:null,
             duration:null,
-            theme:'panda',
+            theme:'',
         }
 
         this.singleJobItem = {
@@ -40,7 +40,7 @@ class SingleJobPage extends Component {
     }
     
     componentDidMount(){
-        this.props.setTheme(this.state.theme);
+        this.props.setTheme(this.state.theme.current);
         this.getSingleJobId(this.props.match.params.job_id, this.singleJobItem);
         this.submitSingleJobData();
     }
