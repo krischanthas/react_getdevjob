@@ -64,17 +64,18 @@ class TabsInfo extends Component{
         }
     }
     render(){
+        console.log("TAB PROPS    :", this.props);
         const {ocr_url, location} = this.props.details.company;
         const {full_address, city} = location;
         let {city_salary, state_salary} = this.props.details.salary;
         city_salary = this.displaySalaryInDollars(city_salary);
         state_salary = this.displaySalaryInDollars(state_salary);
     return(
-            <Tabs className="z-depth-1 tabs-fixed-width tabsBar">
+            <Tabs className={`z-depth-1 tabs-fixed-width tabsBar ${this.props.theme.navColor}`}>
                 <Tab title="salary" active>
                     <div className="section1">
                         <div className='col s12 bm-salary'>
-                            <div className='center'>avgSalary({city})</div>
+                            <div className={`center ${this.props.theme.titleText1}`}>avgSalary(<span className={` ${this.props.theme.titleText2}`}>{city}</span>)</div>
                             <div className='center'>{city_salary}</div>
                                 <SalaryPercentage {...this.props}/>  
                             <div className='center'>avgSalary(California)</div>

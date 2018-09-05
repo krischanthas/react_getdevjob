@@ -15,8 +15,7 @@
 }
 .sp-buttonRow{
     position: relative;
-    left:50%;
-    transform: translateX(-25%);
+    left:15%;   
 }
 
 .sp-buttonRow > a {
@@ -38,7 +37,11 @@
 }
 
 .sp-companyName img {
-    height:auto;
+    width: 80%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sp-jobTitle{
@@ -48,16 +51,16 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    text-align: center;
 }
 
 .sp-Body{
     position: relative;
     height: 100%;
     width: 92%;
-    margin: 4% 4% 0;
+    margin: 0% 4%;
     z-index:4;
     border: 2px solid red;
-    top: 5%;
 }
 
 .sp-leftColumn{
@@ -77,7 +80,7 @@
 .sp-jobDescription{
     overflow: scroll;
     width:100%;
-    height: 37vmin;
+    height:60vh;
     border:2px dashed blue;
 }
 .sp-tabs{
