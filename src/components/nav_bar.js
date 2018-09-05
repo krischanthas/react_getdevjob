@@ -53,6 +53,7 @@ class NavBar extends Component {
 	                            <option value = 'dark'> Dark Theme</option>
 	                            <option value = 'light'> Light Theme</option>
 	                            <option value = 'gotham'> Gotham Theme</option>
+								<option value = 'panda'> Panda Syntax</option>
 	                        </Input>
                         </div>
 					</ul>	

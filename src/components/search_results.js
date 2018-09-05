@@ -22,9 +22,9 @@ class SearchResults extends Component {
 	}
 
 	async componentDidMount(){
-		this.props.setTheme(this.props.theme.current);
 		await this.getJobData();
 		this.populateCards(this.state.response.data.jobs);
+		this.props.setTheme(this.props.theme.current);
 	}
 
 	getFilterResponseData(respObj){
