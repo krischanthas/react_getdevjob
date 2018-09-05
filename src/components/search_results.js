@@ -54,7 +54,7 @@ class SearchResults extends Component {
             userLng:'',
         }	
 		const params = formatPostData(initialSearchParams);
-		const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params); 
+		const resp = await axios.post("/api/get_joblist.php", params); 
 		this.setState({response:resp})		   
     }
 
