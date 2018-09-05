@@ -51,13 +51,7 @@ class Filters extends Component {
         event.preventDefault();
         const params = formatPostData(this.state);
         const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
-
-
         this.props.getFilterData(resp);
-        
-
-        console.log("AXIOS FILTER RESPONSE     :", resp);
-        this.props.getFilterData(resp);   
     }
 
     render(){
@@ -97,13 +91,6 @@ class Filters extends Component {
                             <option value = '15+'>15+ miles</option>
                         </Input>
                     </Row>
-                    {/* <Row>
-                        <Input s={12} type ='select' label = 'Experience' name='experience' defaultValue ='All Available' onChange={this.handleChange.bind(this)}>
-                            <option value = '0-2'>0-2 years</option>
-                            <option value = '2-5'>2-5 years</option>
-                            <option value = '5+'>5+ years</option>
-                        </Input>
-                    </Row> */}
                     <Row>
                         <Input s={12} type ='select' label = 'Posted Within' name='postedDate' defaultValue ='All' onChange={this.handleChange.bind(this)}>
                             <option value = '7'>7 days</option>

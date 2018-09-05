@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Tabs, Tab} from 'react-materialize';
 import './bm-tabs.css';
 import SalaryPercentage from './salary_percentage_difference';
-import {Link} from 'react-router-dom';
+
 
 class TabsInfo extends Component{
     constructor(props){
@@ -64,9 +64,8 @@ class TabsInfo extends Component{
         }
     }
     render(){
-
         const {ocr_url, location} = this.props.details.company;
-        const {street,city, state, zip} = location;
+        const {full_address, city} = location;
         let {city_salary, state_salary} = this.props.details.salary;
         city_salary = this.displaySalaryInDollars(city_salary);
         state_salary = this.displaySalaryInDollars(state_salary);
@@ -88,7 +87,7 @@ class TabsInfo extends Component{
                         <div className='col s12' id='Details'>
                             <ul className = "bm-details center">
                                 <li>companyAddress()</li>
-                                <li>{street} {city} {state} {zip}</li>
+                                <li>{full_address}</li>
                                 <li>estDriveTime()</li>
                                 <li>{this.props.duration}</li>
                                 <li>distanceFromMe()</li>

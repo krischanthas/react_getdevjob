@@ -32,7 +32,6 @@ class SearchResults extends Component {
 	}
 	
 	async getJobData(){
-		console.log("page 2 props", this.props)
 		const {city, job} = this.props.match.params;
         event.preventDefault();   //will need to address isue with backend about querys accounting for spaces or no spaces
 		const initialSearchParams = {

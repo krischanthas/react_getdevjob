@@ -38,10 +38,8 @@ class Card extends Component{
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1;
-        var yyyy = today.getFullYear();
         let post_mm = parseInt(seperatedPostDate[0]);
         let post_dd = parseInt(seperatedPostDate[1]);
-        let post_yyyy = parseInt(seperatedPostDate[2]);
         let withinAWeek = false;
         if( mm - post_mm === 1 && dd <6 && post_dd >=25 ){
             withinAWeek = true
@@ -82,9 +80,7 @@ class Card extends Component{
 
     </div>
         )
-
     }
-
 }
 
 export default Card;
