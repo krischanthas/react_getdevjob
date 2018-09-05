@@ -11,7 +11,6 @@
 .sp-map{
     height:35vmin;
     width: 100%;
-    border: 3px dotted green;
 }
 .sp-buttonRow{
     position: relative;
@@ -25,7 +24,6 @@
     position: relative;
     top:5%;
     font-size: 2rem;
-    border: 2px solid black;
 }
 
 .sp-companyName{
@@ -60,14 +58,12 @@
     width: 92%;
     margin: 0% 4%;
     z-index:4;
-    border: 2px solid red;
 }
 
 .sp-leftColumn{
     width: 40%;
     height: 100%;
     display:inline-block;
-    border: 1px dotted blue;
     vertical-align: top;
 }
 .sp-rightColumn{
@@ -81,11 +77,8 @@
     overflow: scroll;
     width:100%;
     height:60vh;
-    border:2px dashed blue;
 }
-.sp-tabs{
-    border: 2px inset purple;
-}
+
 .sp-tabs li{
   z-index: 2;
 }

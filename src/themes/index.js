@@ -31,5 +31,16 @@ export default {
         button: 'cyan accent-4',
         buttonText: 'white-text ',
         current: 'gotham'
+    },
+    panda: {
+        navColor: 'grey darken-4',
+        background: 'grey darken-2',
+        titleText1: 'pink-text lighten-2',
+        titleText2: 'orange-text lighten-3',
+        text1: 'white-text',
+        text2: 'cyan-text lighten-2',
+        button: 'teal lighten-2',
+        buttonText: 'pink-text',
+        current: 'panda',
     }
 }
