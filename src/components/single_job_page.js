@@ -61,7 +61,7 @@ class SingleJobPage extends Component {
     async submitSingleJobData(event){
         const params = formatPostData(this.singleJobItem);
         
-        const resp = await axios.post("http://localhost:8000/api/get_joblist.php", params);
+        const resp = await axios.post("/api/get_joblist.php", params);
 
         this.setState({
             response:resp.data.jobs[0]});
