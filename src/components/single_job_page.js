@@ -73,8 +73,7 @@ class SingleJobPage extends Component {
             return <h1> Loading </h1>;  // loading animation
         } else {
         let {company_name, description, listing_url, title } = this.state.response;
-        const { logo } = this.state.response.company;   
-        
+        const { logo } = this.state.response.company;  
         if(description===''){
             description = "<h5>No Job Description Provided</h5>";
         }
@@ -101,7 +100,7 @@ class SingleJobPage extends Component {
                         <div className='sp-rightColumn'>
                             <div className='row'>   
                                 <div className ="sp-map">
-                                  <GoogleMap lat={parseFloat(this.state.response.company.location.lat)} lng={parseFloat(this.state.response.company.location.lng)} isOpen={true} drivingInfo={this.getDrivingData} />
+                                  <GoogleMap lat={parseFloat(this.state.response.company.location.lat)} lng={parseFloat(this.state.response.company.location.lng)} isOpen={true} drivingInfo={this.getDrivingData}  theme = {this.props.theme}/>
                                 </div>
                                 <div className='sp-jobDetails'>
                                     <label>Job Description</label>
