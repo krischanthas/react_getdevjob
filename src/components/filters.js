@@ -3,6 +3,8 @@ import './filters.css';
 import {Row, Input} from 'react-materialize';
 import {formatPostData} from "../helpers";
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {setTheme} from '../actions';
 
 class Filters extends Component {
     constructor(props){
@@ -111,5 +113,10 @@ class Filters extends Component {
             )
         }
     }
+function mapStateToProps(state){
+    return{
+        theme: state.theme.theme,
+    }
+}
 
-export default Filters;
+export default connect(mapStateToProps,{ setTheme })(Filters);
