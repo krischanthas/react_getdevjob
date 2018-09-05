@@ -25,7 +25,7 @@ class LandingPage extends Component {
 	}
 	// Get users current location on Landing Page to enable search by Distance
 	componentDidMount(){
-		this.props.setTheme('dark');
+		this.props.setTheme(this.props.theme.current);
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
 			  var pos = {
@@ -61,8 +61,7 @@ class LandingPage extends Component {
 		let locationLow = location.toLowerCase().split(' ').join('');
 		let titleNoSpace = title.toLowerCase().split(' ').join('');
 		let linkQuery = 'listings/' + titleNoSpace + '/' + locationLow;
-		console.log(this.props)
-		
+		console.log('theme', this.props.theme)
 		
 		return (
 				<div className ={`body-container ${this.props.theme.navColor}`}>
@@ -150,7 +149,7 @@ class LandingPage extends Component {
 			                    </Col>
 			                </div>
 			                <div className='row'>
-			                	<Link className = {`btn col s2 offset-s5 waves-effect waves-light ${this.props.theme.button}`} to ={linkQuery}><span className = {this.props.theme.buttonText}>Go</span>	                		
+			                	<Link to ={linkQuery} className = {`btn col s2 offset-s5 waves-effect waves-light ${this.props.theme.button}`}><span className = {this.props.theme.buttonText}>Go</span>	                		
 			                    </Link>	
 			                </div>
 			            </form>    

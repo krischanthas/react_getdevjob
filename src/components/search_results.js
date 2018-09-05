@@ -7,6 +7,8 @@ import { Button, SideNav,SideNavItem } from 'react-materialize';
 import {FaEllipsisV} from 'react-icons/fa';
 import {formatPostData} from "../helpers";
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {setTheme} from '../actions';
 
 class SearchResults extends Component {
 	constructor(props){
@@ -20,6 +22,7 @@ class SearchResults extends Component {
 	}
 
 	async componentDidMount(){
+		this.props.setTheme(this.props.theme.current);
 		await this.getJobData();
 		this.populateCards(this.state.response.data.jobs);
 	}
@@ -81,32 +84,40 @@ class SearchResults extends Component {
 
 
 	render() {
+		console.log("page 2 props 2", this.props)
 		return (
-			<div className = 'main-cont'>
-					<NavBar/>
-					<SideNav
-				  	trigger = {<Button className ="black sideTrigger"><FaEllipsisV/>Filters</Button>}
-				  	options={{closeOnClick:true}}
-					>
-						<SideNavItem>
-							<Filters getFilterData = {this.getFilterResponseData.bind(this)}/>
-						</SideNavItem>
-					</SideNav>
-				<div className = 'cardArea'>
-                   	<div className='leftColumn'>
-	                    {this.state.left}
-	                </div>    
-                	<div className='rightColumn'>
-						{this.state.right}
-                	</div>
-                </div>	
-			</div>
+			<div className = 'parent-div'>
+				<div className = 'spacer-div'></div>
+				<div className = {`main-cont ${this.props.theme.background}`}>
+						<NavBar/>
+						<SideNav
+					  	trigger = {<div className ={`sideTrigger ${this.props.theme.navColor} ${this.props.theme.text1}`}><FaEllipsisV/>Filters</div>}
+					  	options={{closeOnClick:true}}
+						>
+							<SideNavItem>
+								<Filters getFilterData = {this.getFilterResponseData.bind(this)}/>
+							</SideNavItem>
+						</SideNav>
+					<div className = 'cardArea'>
+	                   	<div className='leftColumn'>
+		                    {this.state.left}
+		                </div>    
+	                	<div className='rightColumn'>
+							{this.state.right}
+	                	</div>
+	                </div>	
+				</div>
+			</div>	
 		);
 	}
 }
+function mapStateToProps( state ){
+	return{
+		theme: state.theme.theme,
+		}
+}
 
-
-export default SearchResults;
+export default connect(mapStateToProps,{ setTheme })(SearchResults);
 
 
 
